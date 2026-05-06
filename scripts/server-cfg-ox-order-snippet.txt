@@ -1,0 +1,5 @@
+# Paste into server.cfg so ox_lib loads before ESX (order matters).
+# Adjust resource folder names to match your server.
+
+ensure ox_lib
+ensure es_extended
