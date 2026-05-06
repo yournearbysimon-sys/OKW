@@ -8,7 +8,9 @@
   if (!mount || !canvas || !bpmEl || !hpEl) return;
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
-  let healthPct = 100;
+
+  let staminaPct = 100;
+  let faintActive = false;
   let stripEnabled = false;
 
   function applyLayout(data) {
@@ -65,19 +67,34 @@
     }
 
     if (d.action === "okwHealthEcgVitals") {
-      healthPct = Math.max(0, Math.min(100, Number(d.health) || 0));
+      if (typeof d.stamina === "number") staminaPct = Math.max(0, Math.min(100, d.stamina));
+      else if (typeof d.health === "number") staminaPct = Math.max(0, Math.min(100, d.health));
+      faintActive = !!d.faint;
     }
   });
 
   function lineColor() {
-    if (healthPct > 55) return getComputedStyle(document.documentElement).getPropertyValue("--line-healthy").trim() || "#4ade80";
-    if (healthPct > 25) return getComputedStyle(document.documentElement).getPropertyValue("--line-warn").trim() || "#fbbf24";
+    if (faintActive) return getComputedStyle(document.documentElement).getPropertyValue("--text-dim").trim() || "#9ca3af";
+    if (staminaPct > 50) return getComputedStyle(document.documentElement).getPropertyValue("--line-healthy").trim() || "#4ade80";
+    if (staminaPct > 20) return getComputedStyle(document.documentElement).getPropertyValue("--line-warn").trim() || "#fbbf24";
     return getComputedStyle(document.documentElement).getPropertyValue("--line-critical").trim() || "#f87171";
   }
 
+  /** Target BPM: full stamina = slow & smooth; ~half = faster; empty = fastest. */
   function targetBpm() {
-    const stress = (100 - healthPct) * 0.65;
-    return Math.round(68 + stress + (Math.random() - 0.5) * 4);
+    const s = staminaPct;
+    if (faintActive) return 42 + (Math.random() - 0.5) * 3;
+    if (s > 50) return 56 + (100 - s) * 0.12 + (Math.random() - 0.5) * 2;
+    if (s > 20) return 74 + (50 - s) * 0.55 + (Math.random() - 0.5) * 3;
+    return 102 + (20 - s) * 1.85 + (Math.random() - 0.5) * 5;
+  }
+
+  /** Smoothing: more responsive when stamina is low (faster visual pulse). */
+  function bpmSmoothAlpha() {
+    if (faintActive) return 0.04;
+    if (staminaPct > 50) return 0.06;
+    if (staminaPct > 20) return 0.095;
+    return 0.14;
   }
 
   let displayBpm = 72;
@@ -100,19 +117,23 @@
     if (samples.length > maxSamples) samples.shift();
   }
 
+  /** PQRST-style spike: sharp R up, S down, smooth T. */
   function injectQrs(centerIdx, amplitude) {
     const a = amplitude;
     const sk = samples;
-    const i0 = Math.max(0, centerIdx - 3);
-    for (let k = 0; k < 8; k++) {
+    const len = 14;
+    const i0 = Math.max(0, centerIdx - 5);
+    for (let k = 0; k < len; k++) {
       const i = i0 + k;
       if (i >= sk.length) break;
-      const t = k / 8;
+      const t = k / len;
       let bump = 0;
-      if (t < 0.15) bump = -a * 0.15 * (t / 0.15);
-      else if (t < 0.35) bump = a * (t - 0.15) / 0.2;
-      else if (t < 0.5) bump = a * (1 - (t - 0.35) / 0.15) * 0.85;
-      else if (t < 0.7) bump = -a * 0.35 * Math.sin(((t - 0.5) / 0.2) * Math.PI);
+      if (t < 0.1) bump = -a * 0.06 * Math.sin((t / 0.1) * Math.PI);
+      else if (t < 0.18) bump = -a * 0.28 * ((t - 0.1) / 0.08);
+      else if (t < 0.26) bump = a * 1.22 * ((t - 0.18) / 0.08);
+      else if (t < 0.34) bump = -a * 0.5 * ((t - 0.26) / 0.08);
+      else if (t < 0.52) bump = a * 0.22 * Math.sin(((t - 0.34) / 0.18) * Math.PI);
+      else if (t < 0.65) bump = -a * 0.08 * Math.sin(((t - 0.52) / 0.13) * Math.PI);
       sk[i] = (sk[i] || 0) + bump;
     }
   }
@@ -131,18 +152,24 @@
     const mid = h * 0.55;
 
     const bpm = targetBpm();
-    displayBpm += (bpm - displayBpm) * 0.08;
-    const beatMs = 60000 / Math.max(48, Math.min(165, displayBpm));
+    displayBpm += (bpm - displayBpm) * bpmSmoothAlpha();
+    const beatMs = 60000 / Math.max(42, Math.min(175, displayBpm));
 
-    const wander = (Math.sin(ts * 0.004) + Math.sin(ts * 0.0017)) * (1.2 + (100 - healthPct) * 0.04);
-    const jitter = (Math.random() - 0.5) * (0.4 + (100 - healthPct) * 0.02);
+    const stress = (100 - staminaPct) * 0.045;
+    const wanderSlow = Math.sin(ts * 0.0011) * (0.9 + stress);
+    const wanderFast = Math.sin(ts * 0.0038) * (0.35 + stress * 0.8);
+    const jitter = (Math.random() - 0.5) * (0.28 + stress * 0.65);
 
-    pushSample(mid + wander * 4 + jitter * 3);
+    if (faintActive) {
+      pushSample(mid + Math.sin(ts * 0.002) * 2);
+    } else {
+      pushSample(mid + wanderSlow * 5 + wanderFast * 3 + jitter * 4);
+    }
 
-    if (ts - lastBeat >= beatMs) {
+    if (!faintActive && ts - lastBeat >= beatMs) {
       lastBeat = ts;
-      const amp = (6 + (100 - healthPct) * 0.22) * (h / 88);
-      injectQrs(samples.length - 1, amp);
+      const ampBase = (8.5 + (100 - staminaPct) * 0.28) * (h / 88);
+      injectQrs(samples.length - 1, ampBase);
     }
 
     ctx.clearRect(0, 0, w, h);
@@ -161,7 +188,7 @@
     ctx.shadowBlur = h * 0.08;
 
     ctx.beginPath();
-    const stepX = (i) => ((i / (slice.length - 1)) * (w - 8)) + 4;
+    const stepX = (i) => (i / (slice.length - 1)) * (w - 8) + 4;
     for (let i = 0; i < slice.length; i++) {
       const x = stepX(i);
       const y = slice[i];
@@ -172,7 +199,7 @@
     ctx.shadowBlur = 0;
 
     bpmEl.textContent = String(Math.round(displayBpm));
-    hpEl.textContent = String(Math.round(healthPct));
+    hpEl.textContent = String(Math.round(staminaPct));
 
     requestAnimationFrame(draw);
   }

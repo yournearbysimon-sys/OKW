@@ -92,6 +92,16 @@ Config.HealthEcg = {
     useLegacyHudLayoutKey = true,
     --- ox_lib dialog to edit position (set false to disable the command).
     LayoutCommand = "ecglayout",
+
+    useStaminaForStrip = true,
+    staminaMax = 40.0,
+
+    FaintEnabled = true,
+    faintStaminaThresholdPct = 4.0,
+    faintHoldSprintMs = 1000,
+    faintDurationMs = 10000,
+    faintRecoverStamina = 0.42,
+    faintCheckIntervalMs = 120,
 }
 
 -- OKW: print HUD layout/settings to the client console (open with F8, then type hudexport). Optional keybind below (F8 often opens console, so default is F9).
