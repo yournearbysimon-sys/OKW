@@ -3,7 +3,7 @@ game 'gta5'
 lua54 'yes'
 
 name 'okw_revive_state_sync'
-description 'Clears stuck death / fatal-injury state so ox_inventory can open after revive. Call exports after your EMS heals a player.'
+description 'Clears stuck death / fatal-injury / invBusy state so ox_inventory can open. Auto-sync on esx:onPlayerSpawn; optional export for EMS revive without spawn.'
 version '1.0.0'
 
 dependencies {
