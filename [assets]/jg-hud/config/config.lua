@@ -85,3 +85,6 @@ Config.HealthEcg = {
     stripWidth = "clamp(268px, 34vw, 440px)",
     updateIntervalMs = 100,
 }
+
+-- OKW: print HUD layout/settings to the client console (open with F8, then type hudexport). Optional keybind below (F8 often opens console, so default is F9).
+Config.HudExportKeybind = "F9"

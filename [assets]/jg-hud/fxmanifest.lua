@@ -44,6 +44,8 @@ escrow_ignore {
   "config/**/*",
   "locales/**/*",
   "client/cl-nearest-postal.lua",
-  "client/cl-seatbelt.lua"
+  "client/cl-seatbelt.lua",
+  "client/cl-okw-health-ecg.lua",
+  "client/cl-okw-hud-export.lua"
 }
 dependency '/assetpacks'

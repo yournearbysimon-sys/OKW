@@ -25,5 +25,35 @@
     </div>
     <div id="root"></div>
     <script defer src="./assets/okw-health-ecg.js"></script>
+    <script>
+      (function () {
+        window.addEventListener("message", function (event) {
+          var d = event.data;
+          if (!d || d.action !== "okw-hud-export-request") return;
+          var resource =
+            typeof GetParentResourceName === "function"
+              ? GetParentResourceName()
+              : "jg-hud";
+          var payload = { localStorage: {}, sessionStorage: {} };
+          try {
+            for (var i = 0; i < localStorage.length; i++) {
+              var k = localStorage.key(i);
+              payload.localStorage[k] = localStorage.getItem(k);
+            }
+          } catch (e) {}
+          try {
+            for (var j = 0; j < sessionStorage.length; j++) {
+              var sk = sessionStorage.key(j);
+              payload.sessionStorage[sk] = sessionStorage.getItem(sk);
+            }
+          } catch (e2) {}
+          fetch("https://" + resource + "/okwHudSettingsDump", {
+            method: "POST",
+            headers: { "Content-Type": "application/json; charset=UTF-8" },
+            body: JSON.stringify(payload),
+          }).catch(function () {});
+        });
+      })();
+    </script>
   </body>
 </html>
