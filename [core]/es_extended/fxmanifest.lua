@@ -6,6 +6,7 @@ lua54 'yes'
 version '1.13.4'
 
 shared_scripts {
+	'@ox_lib/init.lua',
 	'locale.lua',
 
 	'shared/config/main.lua',
@@ -80,6 +81,7 @@ files {
 }
 
 dependencies {
+	'ox_lib',
 	'/native:0x6AE51D4B',
     '/native:0xA61C8FC6',
 	'oxmysql',
