@@ -387,12 +387,12 @@
         "height": 50
       },
       "offset": {
-        "left": 190.19427408983246,
+        "left": 190.19427408983248,
         "bottom": 224.4390869140625,
         "y": 745.5609130859375,
         "offsetY": -15.25004386901855,
-        "offsetX": -30.36823289910336,
-        "x": 190.19427408983246
+        "offsetX": -30.36823289910333,
+        "x": 190.19427408983248
       }
     },
     "seaModernSpeedo_fuel": {
@@ -429,12 +429,12 @@
         "height": 196.3636363636364
       },
       "offset": {
-        "left": -30,
+        "left": 0,
         "bottom": 88.07545055042613,
         "y": 735.5609130859375,
         "offsetY": -15.25004386901855,
-        "offsetX": -30,
-        "x": -30
+        "offsetX": 0,
+        "x": 0
       }
     },
     "progressOutlineHealth_oxygen": {
@@ -586,12 +586,12 @@
       },
       "hidden": true,
       "offset": {
-        "left": 250,
+        "left": 270,
         "bottom": 230,
         "y": 740,
         "offsetY": -230,
-        "offsetX": 130,
-        "x": 250
+        "offsetX": 150,
+        "x": 270
       }
     },
     "minimalSpeedo_engine": {
@@ -642,12 +642,12 @@
         "height": 20
       },
       "offset": {
-        "left": 250,
+        "left": 270,
         "bottom": 94.4390869140625,
         "y": 905.5609130859376,
         "offsetY": 144.74995613098145,
-        "offsetX": 240,
-        "x": 250
+        "offsetX": 260,
+        "x": 270
       }
     },
     "circularMinimap": {
@@ -671,12 +671,12 @@
       },
       "hidden": true,
       "offset": {
-        "left": 250,
+        "left": 270,
         "bottom": 180,
         "y": 790,
         "offsetY": -180,
-        "offsetX": 70,
-        "x": 250
+        "offsetX": 90,
+        "x": 270
       }
     },
     "modernSpeedo_speedo": {
@@ -742,12 +742,12 @@
         "height": 50
       },
       "offset": {
-        "left": 243.1999549865723,
+        "left": 273.19995498657229,
         "bottom": 120,
         "y": 850,
         "offsetY": 850,
-        "offsetX": -1490.0000038146973,
-        "x": 243.1999549865723
+        "offsetX": -1460.0000038146973,
+        "x": 273.19995498657229
       }
     },
     "server-logo": {
