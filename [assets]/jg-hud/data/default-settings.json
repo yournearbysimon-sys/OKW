@@ -387,12 +387,12 @@
         "height": 50
       },
       "offset": {
-        "left": 220.19427408983248,
-        "bottom": 204.4390869140625,
-        "y": 765.5609130859375,
-        "offsetY": 0,
-        "offsetX": 0,
-        "x": 220.19427408983248
+        "left": 190.19427408983246,
+        "bottom": 224.4390869140625,
+        "y": 745.5609130859375,
+        "offsetY": -15.25004386901855,
+        "offsetX": -30.36823289910336,
+        "x": 190.19427408983246
       }
     },
     "seaModernSpeedo_fuel": {
@@ -429,12 +429,12 @@
         "height": 196.3636363636364
       },
       "offset": {
-        "left": 0,
-        "bottom": 108.07545055042613,
-        "y": 715.5609130859375,
-        "offsetY": 0,
-        "offsetX": 0,
-        "x": 0
+        "left": -30,
+        "bottom": 88.07545055042613,
+        "y": 735.5609130859375,
+        "offsetY": -15.25004386901855,
+        "offsetX": -30,
+        "x": -30
       }
     },
     "progressOutlineHealth_oxygen": {
@@ -586,12 +586,12 @@
       },
       "hidden": true,
       "offset": {
-        "left": 120,
-        "bottom": 0,
-        "y": 970,
-        "offsetY": 0,
-        "offsetX": 0,
-        "x": 120
+        "left": 250,
+        "bottom": 230,
+        "y": 740,
+        "offsetY": -230,
+        "offsetX": 130,
+        "x": 250
       }
     },
     "minimalSpeedo_engine": {
@@ -642,12 +642,12 @@
         "height": 20
       },
       "offset": {
-        "left": 10,
-        "bottom": 274.4390869140625,
-        "y": 725.5609130859375,
-        "offsetY": 0,
-        "offsetX": 0,
-        "x": 10
+        "left": 250,
+        "bottom": 94.4390869140625,
+        "y": 905.5609130859376,
+        "offsetY": 144.74995613098145,
+        "offsetX": 240,
+        "x": 250
       }
     },
     "circularMinimap": {
@@ -671,12 +671,12 @@
       },
       "hidden": true,
       "offset": {
-        "left": 180,
-        "bottom": 0,
-        "y": 970,
-        "offsetY": 0,
-        "offsetX": 0,
-        "x": 180
+        "left": 250,
+        "bottom": 180,
+        "y": 790,
+        "offsetY": -180,
+        "offsetX": 70,
+        "x": 250
       }
     },
     "modernSpeedo_speedo": {
@@ -738,16 +738,16 @@
     },
     "playerVoice_avatar_mic": {
       "dimensions": {
-        "width": 210,
+        "width": 110,
         "height": 50
       },
       "offset": {
-        "offsetX": -10,
-        "bottom": 10,
-        "right": 10,
-        "y": 960,
-        "offsetY": 960,
-        "x": 1641.9999980926514
+        "left": 243.1999549865723,
+        "bottom": 120,
+        "y": 850,
+        "offsetY": 850,
+        "offsetX": -1490.0000038146973,
+        "x": 243.1999549865723
       }
     },
     "server-logo": {
@@ -758,7 +758,7 @@
       "offset": {
         "right": 10.999999046325684,
         "top": 30,
-        "offsetX": 890,
+        "offsetX": 880.5999803543091,
         "offsetY": 30,
         "x": 1770.9999990463257,
         "y": 30
@@ -802,7 +802,7 @@
     "compassStyle": "minimalSmall",
     "showMinimapOnFoot": true,
     "showCompassOnFoot": true,
-    "moveCompassWithMinimap": true,
+    "moveCompassWithMinimap": false,
     "moveCompassWithMinimapUpdatedManually": false,
     "showNorthBlip": false,
     "showNearestPostal": true,
