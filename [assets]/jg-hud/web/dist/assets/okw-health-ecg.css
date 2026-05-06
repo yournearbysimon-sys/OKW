@@ -28,6 +28,8 @@
   bottom: var(--ecg-bottom);
   width: var(--ecg-width);
   pointer-events: none;
+  background: transparent;
+  box-shadow: none;
   /* Below jg-hud so round status icons / street text stay visually on top. */
   z-index: 0;
   transform: translate(var(--ecg-tx), var(--ecg-ty));
@@ -39,13 +41,21 @@
   pointer-events: none;
 }
 
+/* One rounded card only: tint + blur are painted inside these curves (CEF often draws
+   backdrop-filter as a sharp rectangle without clip-path + overflow). No extra layers. */
 .okw-ecg-frame {
-  border-radius: 10px;
+  --ecg-frame-radius: 12px;
+  border-radius: var(--ecg-frame-radius);
+  overflow: hidden;
+  isolation: isolate;
+  contain: layout paint;
   border: 1px solid var(--frame-border);
   background: var(--frame-bg);
+  -webkit-clip-path: inset(0 round var(--ecg-frame-radius));
+  clip-path: inset(0 round var(--ecg-frame-radius));
   backdrop-filter: blur(var(--frame-blur)) saturate(1.08);
   -webkit-backdrop-filter: blur(var(--frame-blur)) saturate(1.08);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
   padding: 8px 10px 6px;
 }
 
