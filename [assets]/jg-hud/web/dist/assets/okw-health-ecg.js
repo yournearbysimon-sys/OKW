@@ -117,24 +117,32 @@
     if (samples.length > maxSamples) samples.shift();
   }
 
-  /** PQRST-style spike: sharp R up, S down, smooth T. */
-  function injectQrs(centerIdx, amplitude) {
+  /** Classic strip: isoelectric, rounded P, Q-down, tall R, deep S, ST, rounded T, small U. */
+  function ecgBeatDeltaY(u, a) {
+    if (u < 0.18) return 0;
+    if (u < 0.27) return a * 0.12 * Math.sin(((u - 0.18) / 0.09) * Math.PI);
+    if (u < 0.34) return 0;
+    if (u < 0.37) return -a * 0.22 * ((u - 0.34) / 0.03);
+    if (u < 0.405) return -a * 0.22 + a * 1.52 * ((u - 0.37) / 0.035);
+    if (u < 0.438)
+      return a * 1.3 - a * 1.78 * ((u - 0.405) / 0.033);
+    if (u < 0.485) return -a * 0.48 * (1 - (u - 0.438) / 0.047);
+    if (u < 0.53) return 0;
+    if (u < 0.76) return a * 0.29 * Math.sin(((u - 0.53) / 0.23) * Math.PI);
+    if (u < 0.84) return a * 0.07 * Math.sin(((u - 0.76) / 0.08) * Math.PI);
+    return 0;
+  }
+
+  function injectEcgBeat(endIdx, amplitude) {
     const a = amplitude;
+    const len = 56;
+    const i0 = Math.max(0, endIdx - (len - 1));
     const sk = samples;
-    const len = 14;
-    const i0 = Math.max(0, centerIdx - 5);
     for (let k = 0; k < len; k++) {
       const i = i0 + k;
       if (i >= sk.length) break;
-      const t = k / len;
-      let bump = 0;
-      if (t < 0.1) bump = -a * 0.06 * Math.sin((t / 0.1) * Math.PI);
-      else if (t < 0.18) bump = -a * 0.28 * ((t - 0.1) / 0.08);
-      else if (t < 0.26) bump = a * 1.22 * ((t - 0.18) / 0.08);
-      else if (t < 0.34) bump = -a * 0.5 * ((t - 0.26) / 0.08);
-      else if (t < 0.52) bump = a * 0.22 * Math.sin(((t - 0.34) / 0.18) * Math.PI);
-      else if (t < 0.65) bump = -a * 0.08 * Math.sin(((t - 0.52) / 0.13) * Math.PI);
-      sk[i] = (sk[i] || 0) + bump;
+      const u = len > 1 ? k / (len - 1) : 0;
+      sk[i] = (sk[i] || 0) + ecgBeatDeltaY(u, a);
     }
   }
 
@@ -155,21 +163,21 @@
     displayBpm += (bpm - displayBpm) * bpmSmoothAlpha();
     const beatMs = 60000 / Math.max(42, Math.min(175, displayBpm));
 
-    const stress = (100 - staminaPct) * 0.045;
-    const wanderSlow = Math.sin(ts * 0.0011) * (0.9 + stress);
-    const wanderFast = Math.sin(ts * 0.0038) * (0.35 + stress * 0.8);
-    const jitter = (Math.random() - 0.5) * (0.28 + stress * 0.65);
+    const stress = (100 - staminaPct) * 0.03;
+    const wanderSlow = Math.sin(ts * 0.0011) * (0.32 + stress);
+    const wanderFast = Math.sin(ts * 0.0038) * (0.11 + stress * 0.4);
+    const jitter = (Math.random() - 0.5) * (0.11 + stress * 0.32);
 
     if (faintActive) {
       pushSample(mid + Math.sin(ts * 0.002) * 2);
     } else {
-      pushSample(mid + wanderSlow * 5 + wanderFast * 3 + jitter * 4);
+      pushSample(mid + wanderSlow * 2.8 + wanderFast * 1.8 + jitter * 2);
     }
 
     if (!faintActive && ts - lastBeat >= beatMs) {
       lastBeat = ts;
-      const ampBase = (8.5 + (100 - staminaPct) * 0.28) * (h / 88);
-      injectQrs(samples.length - 1, ampBase);
+      const ampBase = (9.2 + (100 - staminaPct) * 0.3) * (h / 88);
+      injectEcgBeat(samples.length - 1, ampBase);
     }
 
     ctx.clearRect(0, 0, w, h);
@@ -183,7 +191,7 @@
     ctx.lineJoin = "round";
     ctx.lineCap = "round";
     ctx.strokeStyle = lineColor();
-    ctx.lineWidth = Math.max(1.4, h * 0.035);
+    ctx.lineWidth = Math.max(1.65, h * 0.042);
     ctx.shadowColor = lineColor();
     ctx.shadowBlur = h * 0.08;
 
