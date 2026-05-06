@@ -1,9 +1,12 @@
 --[[
-  While a non-unarmed weapon is selected (drawn), ragdoll is disabled.
-  Prevents weapon-in-hand stumble / weapon-impact ragdoll. Unarmed restores defaults.
+  While a non-unarmed weapon is selected (drawn):
+  - Ragdoll disabled (stumble / impact).
+  - While aiming (ADS), combat roll is blocked (Jump in aim mode = roll).
 ]]
 
 local UNARMED = `WEAPON_UNARMED`
+--- https://docs.fivem.net/docs/game-references/controls/
+local INPUT_JUMP = 22
 
 --- SET_PED_CAN_RAGDOLL_FROM_PLAYER_IMPACT — older names/doc typos used *Weapon* and crashed.
 local function setCanRagdollFromPlayerImpact(ped, toggle)
@@ -35,6 +38,10 @@ CreateThread(function()
                 setCanRagdollFromPlayerImpact(ped, false)
                 if IsPedRagdoll(ped) then
                     ResetPedRagdollTimer(ped)
+                end
+                -- Space/Jump while aimed = combat roll — block only during ADS.
+                if IsPlayerFreeAiming(PlayerId()) then
+                    DisableControlAction(0, INPUT_JUMP, true)
                 end
             else
                 SetPedCanRagdoll(ped, true)
