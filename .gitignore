@@ -1,0 +1,3 @@
+# Scratch one-off search scripts: delete after use; do not commit
+scripts/_tmp*.py
+scripts/_scratch*.py
