@@ -10,7 +10,7 @@
     <link rel="stylesheet" crossorigin href="/web/dist/assets/index-DybqigqD.css">
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Under #root in stacking order so jg-hud status circles paint on top. -->
     <div class="okw-ecg-root" id="okw-health-ecg-mount" style="display: none">
       <div class="okw-ecg-frame">
         <div class="okw-ecg-canvas-wrap">
@@ -23,6 +23,7 @@
         </div>
       </div>
     </div>
+    <div id="root"></div>
     <script defer src="./assets/okw-health-ecg.js"></script>
   </body>
 </html>

@@ -1,8 +1,8 @@
 /* OKW — cardiac strip (scoped only; do not set pointer-events on body/html). */
 :root {
   --ecg-left: 0.55vw;
-  /* Lower value = closer to bottom of screen (sits under the round status icons). */
-  --ecg-bottom: 10.5vh;
+  /* Distance from bottom of viewport. Status row sits ~8–14vh — use ~2–4vh to tuck strip under it. */
+  --ecg-bottom: 2.75vh;
   --ecg-width: clamp(268px, 34vw, 440px);
   /* Mostly transparent — avoids the solid black slab in-game. */
   --frame-bg: rgba(12, 14, 22, 0.22);
@@ -21,7 +21,8 @@
   bottom: var(--ecg-bottom);
   width: var(--ecg-width);
   pointer-events: none;
-  z-index: 9999;
+  /* Below jg-hud so round status icons / street text stay visually on top. */
+  z-index: 0;
 }
 
 .okw-ecg-frame {

@@ -80,8 +80,8 @@ Config.Debug = false
 Config.HealthEcg = {
     Enabled = true,
     offsetLeft = "0.55vw",
-    -- Smaller = lower on screen (under the round status icons). Tune in 0.5vh steps.
-    offsetBottom = "10.5vh",
+    -- Smaller bottom = strip closer to minimap (under icon row). Tune 2vh–5vh.
+    offsetBottom = "2.75vh",
     stripWidth = "clamp(268px, 34vw, 440px)",
     updateIntervalMs = 100,
 }
