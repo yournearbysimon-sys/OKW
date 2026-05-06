@@ -1,10 +1,6 @@
 --[[
-  OKW — BPM / ECG strip inside jg-hud NUI (see web/dist/index.html + assets/okw-health-ecg.*).
-  Toggle in config/config.lua → Config.HealthEcg.Enabled
-
-  Layout: add "okwHealthEcg" to data/default-settings.json (included). On start we merge that
-  block into hud-layout KVP if missing so /hud can list and move it like other widgets.
-  Position syncs from KVP while the resource runs.
+  OKW — BPM / ECG strip (web/dist okw-health-ecg.*). Not a jg-hud React widget, so /hud layout editor
+  will not give a clean drag box. Use Config.HealthEcg.LayoutCommand (default ecglayout) for px layout.
 ]]
 
 local function healthPercent(ped)
@@ -23,8 +19,8 @@ end
 local ecg = Config.HealthEcg
 local prefix = Config.DefaultSettingsKvpPrefix or "hud-"
 local kvpLayout = prefix .. "layout"
---- Sentinel so the first poll runs even when KVP is empty (nil ~= sentinel).
-local lastLayoutRaw = "\0okw-ecg-layout-unread"
+local kvpDedicated = ecg.dedicatedLayoutKvpKey or "okw-ecg-layout"
+local lastApplySig = "\0okw-ecg-sig-unread"
 
 local function decodeJson(raw)
     if not raw or raw == "" then
@@ -37,34 +33,27 @@ local function decodeJson(raw)
     return t
 end
 
---- If hud-layout already exists but has no okwHealthEcg, inject the block from default-settings.json.
---- Never write when KVP is empty — that would wipe the full layout; jg-hud will hydrate from default-settings.json first.
-local function mergeOkwLayoutFromDefaultsIfMissing()
-    local raw = GetResourceKvpString(kvpLayout)
-    if not raw or raw == "" then
-        return
+--- Flat okw-ecg-layout KVP → same shape as hud layout entries for sendEcgLayout.
+local function entryFromDedicated(t)
+    if type(t) ~= "table" then
+        return nil
     end
-    local layout = decodeJson(raw)
-    if not layout or type(layout) ~= "table" then
-        return
-    end
-    if layout.okwHealthEcg ~= nil then
-        return
-    end
-    local path = Config.DefaultSettingsData or "data/default-settings.json"
-    local defRaw = LoadResourceFile(GetCurrentResourceName(), path)
-    if not defRaw then
-        return
-    end
-    local def = decodeJson(defRaw)
-    if not def or type(def.layout) ~= "table" or def.layout.okwHealthEcg == nil then
-        return
-    end
-    layout.okwHealthEcg = def.layout.okwHealthEcg
-    local ok, encoded = pcall(json.encode, layout)
-    if ok and encoded then
-        SetResourceKvpString(kvpLayout, encoded)
-    end
+    return {
+        hidden = t.hidden,
+        dimensions = {
+            width = t.width,
+            height = t.height,
+        },
+        offset = {
+            left = t.left,
+            bottom = t.bottom,
+            x = t.left,
+            right = t.right,
+            top = t.top,
+            offsetX = t.offsetX,
+            offsetY = t.offsetY,
+        },
+    }
 end
 
 local function npx(n)
@@ -128,34 +117,49 @@ local function sendConfigOnly()
     })
 end
 
-local function tryApplyLayoutFromKvp()
+local fallbackConfig = {
+    offsetLeft = ecg.offsetLeft,
+    offsetBottom = ecg.offsetBottom,
+    stripWidth = ecg.stripWidth,
+}
+
+local function applyEcgLayoutFromSources()
     if ecg.syncLayoutFromKvp == false then
         return
     end
-    local raw = GetResourceKvpString(kvpLayout)
-    if raw == lastLayoutRaw then
+
+    local dedRaw = GetResourceKvpString(kvpDedicated)
+    local layoutRaw = GetResourceKvpString(kvpLayout)
+    local sig = (dedRaw or "") .. "\n" .. (layoutRaw or "")
+    if sig == lastApplySig then
         return
     end
-    lastLayoutRaw = raw
+    lastApplySig = sig
 
-    local layout = decodeJson(raw)
-    if not layout or layout.okwHealthEcg == nil then
+    local entry = nil
+    if dedRaw and dedRaw ~= "" then
+        entry = entryFromDedicated(decodeJson(dedRaw))
+    end
+    if not entry and ecg.useLegacyHudLayoutKey ~= false then
+        local layout = decodeJson(layoutRaw)
+        if layout and layout.okwHealthEcg then
+            entry = layout.okwHealthEcg
+        end
+    end
+
+    if not entry then
         sendConfigOnly()
         return
     end
-    sendEcgLayout(layout.okwHealthEcg, {
-        offsetLeft = ecg.offsetLeft,
-        offsetBottom = ecg.offsetBottom,
-        stripWidth = ecg.stripWidth,
-    })
+    sendEcgLayout(entry, fallbackConfig)
+end
+
+function OkwHealthEcg_ApplyLayoutNow()
+    lastApplySig = "\0okw-ecg-sig-unread"
+    applyEcgLayoutFromSources()
 end
 
 CreateThread(function()
-    Wait(400)
-    if ecg.syncLayoutFromKvp ~= false and ecg.mergeDefaultLayout ~= false then
-        mergeOkwLayoutFromDefaultsIfMissing()
-    end
-
     Wait(1600)
     if ecg.Enabled == false then
         SendNUIMessage({
@@ -170,14 +174,50 @@ CreateThread(function()
         return
     end
 
-    tryApplyLayoutFromKvp()
+    applyEcgLayoutFromSources()
 
-    local pollMs = tonumber(ecg.layoutPollMs) or 750
+    local pollMs = tonumber(ecg.layoutPollMs) or 500
     while ecg.Enabled ~= false and ecg.syncLayoutFromKvp ~= false do
         Wait(pollMs)
-        tryApplyLayoutFromKvp()
+        applyEcgLayoutFromSources()
     end
 end)
+
+--- ox_lib: pixel layout (jg /hud cannot drag this NUI subtree as one unit).
+local layoutCmd = ecg.LayoutCommand
+if type(layoutCmd) == "string" and layoutCmd ~= "" and layoutCmd ~= "false" then
+    RegisterCommand(layoutCmd, function()
+        if ecg.Enabled == false then
+            return
+        end
+        local cur = decodeJson(GetResourceKvpString(kvpDedicated)) or {}
+        local input = lib.inputDialog("OKW — ECG / BPM strip (px)", {
+            { type = "number", label = "From left",       default = tonumber(cur.left) or tonumber(cur.x) or 11,  min = 0 },
+            { type = "number", label = "From bottom",     default = tonumber(cur.bottom) or 30, min = 0 },
+            { type = "number", label = "Width",           default = tonumber(cur.width) or 400,  min = 80 },
+            { type = "number", label = "Nudge X",         default = tonumber(cur.offsetX) or 0 },
+            { type = "number", label = "Nudge Y",         default = tonumber(cur.offsetY) or 0 },
+        })
+        if not input then
+            return
+        end
+        local t = {
+            left = input[1],
+            bottom = input[2],
+            width = input[3],
+            offsetX = input[4],
+            offsetY = input[5],
+            hidden = false,
+        }
+        local ok, encoded = pcall(json.encode, t)
+        if not ok or not encoded then
+            return
+        end
+        SetResourceKvpString(kvpDedicated, encoded)
+        OkwHealthEcg_ApplyLayoutNow()
+        lib.notify({ title = "ECG strip", description = "Position saved.", type = "success" })
+    end, false)
+end
 
 CreateThread(function()
     Wait(2200)
@@ -201,3 +241,4 @@ CreateThread(function()
         Wait(interval)
     end
 end)
+

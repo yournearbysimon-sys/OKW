@@ -76,17 +76,22 @@ Config.UpdateRadarZoom = true -- Enable this if radar is flicking/disappearing
 Config.DevDeleteAllUserSettingsOnStart = true -- Delete player existing KVP when they log in?
 Config.Debug = false
 
--- Match /hud layout (hud-layout KVP): okwHealthEcg block in default-settings.json. Set mergeDefaultLayout false if you manage KVP yourself.
+-- OKW cardiac strip: lives outside jg-hud React — /hud cannot drag it as one box (fragmented handles).
+-- Use /ecglayout (ox_lib) to set px position; stored in resource KVP okw-ecg-layout. /hud + hudexport still apply to native widgets only.
 Config.HealthEcg = {
     Enabled = true,
     offsetLeft = "0.55vw",
-    -- Smaller bottom = strip closer to minimap (under icon row). Tune 2vh–5vh. Used when not using hud layout sync.
     offsetBottom = "2.75vh",
     stripWidth = "clamp(268px, 34vw, 440px)",
     updateIntervalMs = 100,
     syncLayoutFromKvp = true,
-    mergeDefaultLayout = true,
-    layoutPollMs = 750,
+    layoutPollMs = 500,
+    --- Dedicated KVP JSON: {"left":11,"bottom":30,"width":400,"offsetX":0,"offsetY":0,"hidden":false}
+    dedicatedLayoutKvpKey = "okw-ecg-layout",
+    --- Still read legacy hud-layout.okwHealthEcg if dedicated KVP is empty (old installs).
+    useLegacyHudLayoutKey = true,
+    --- ox_lib dialog to edit position (set false to disable the command).
+    LayoutCommand = "ecglayout",
 }
 
 -- OKW: print HUD layout/settings to the client console (open with F8, then type hudexport). Optional keybind below (F8 often opens console, so default is F9).

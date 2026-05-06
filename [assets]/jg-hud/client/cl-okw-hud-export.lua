@@ -19,6 +19,7 @@ local function tryPrintKvp()
         prefix .. "saved",
         "jg-hud-settings",
         "jg_hud_settings",
+        "okw-ecg-layout",
     }
     local any = false
     for _, key in ipairs(keys) do
