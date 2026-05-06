@@ -32,6 +32,12 @@
   transform: translate(var(--ecg-tx), var(--ecg-ty));
 }
 
+/* Canvas/footer default to pointer-events:auto and would steal clicks from jg-hud's
+   layout editor (drag/resize handles live in React above this layer). */
+.okw-ecg-root * {
+  pointer-events: none;
+}
+
 .okw-ecg-frame {
   border-radius: 10px;
   border: 1px solid var(--frame-border);
