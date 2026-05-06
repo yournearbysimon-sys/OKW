@@ -31,6 +31,13 @@ AddEventHandler('esx:setPlayerData', function(key, value)
 	end
 
 	PlayerData[key] = value
+	-- ESX clears client dead on spawn/revive, but ox_inventory also mirrors `dead` from the player state bag.
+	-- If the bag was never cleared serverside, keep bag aligned when ESX says alive (fixes stuck inventory).
+	if key == 'dead' and not value then
+		pcall(function()
+			LocalPlayer.state:set('dead', false, true)
+		end)
+	end
 	OnPlayerData(key, value)
 end)
 

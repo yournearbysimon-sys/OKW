@@ -121,6 +121,23 @@ plyState:set('invBusy', true, true)
 plyState:set('invHotkeys', false, false)
 plyState:set('canUseWeapons', false, false)
 
+local function syncEsxAliveDesync()
+	-- PlayerData.dead is normally synced from the state bag; if the bag stays true while ESX already cleared
+	-- death after revive/spawn, inventory stays blocked until bag matches. Align when ESX + ped agree you're alive.
+	if shared.framework ~= 'esx' then return end
+	local ok, esx = pcall(function()
+		return exports['es_extended']:getSharedObject()
+	end)
+	if not ok or not esx or not esx.PlayerData or esx.PlayerData.dead then return end
+	if IsPedFatallyInjured(playerPed) or IsPedDeadOrDying(playerPed, true) then return end
+	if PlayerData.dead then
+		PlayerData.dead = false
+		pcall(function()
+			LocalPlayer.state:set('dead', false, true)
+		end)
+	end
+end
+
 local function canOpenInventory()
     if not PlayerData.loaded then
         return shared.info('cannot open inventory', '(player inventory has not loaded)')
@@ -131,6 +148,8 @@ local function canOpenInventory()
     if invBusy or invOpen == nil or (currentWeapon?.timer or 0) > 0 then
         return shared.info('cannot open inventory', '(is busy)')
     end
+
+	syncEsxAliveDesync()
 
     if PlayerData.dead or IsPedFatallyInjured(playerPed) then
         return shared.info('cannot open inventory', '(fatal injury)')
