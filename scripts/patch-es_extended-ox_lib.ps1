@@ -1,11 +1,12 @@
 # Patches es_extended fxmanifest.lua so global `lib` (ox_lib) exists on the client.
 #
-# Windows (local):
-#   .\patch-es_extended-ox_lib.ps1 -EsExtendedRoot "D:\...\resources\[core]\es_extended"
+# Windows (local / Windows VPS):
+#   cd ...\OKW_Framework\scripts
+#   .\patch-es_extended-ox_lib.ps1 -EsExtendedRoot "...\es_extended"
+# If you see "not recognized", you are not in the scripts folder. Either cd there or:
+#   & "C:\full\path\to\OKW_Framework\scripts\patch-es_extended-ox_lib.ps1" -EsExtendedRoot "..."
 #
-# Linux VPS (FXServer on the server): use Python instead:
-#   python3 patch-es_extended-ox_lib.py --es-extended-root '/home/.../resources/[core]/es_extended'
-#   # or: chmod +x patch-es_extended-ox_lib.sh && ./patch-es_extended-ox_lib.sh --fxmanifest /path/to/fxmanifest.lua
+# Linux VPS: use patch-es_extended-ox_lib.py instead of PowerShell.
 param(
     [string] $EsExtendedRoot = "",
     [string] $FxManifestPath = "",
