@@ -25,11 +25,14 @@ if ($FxManifestPath -eq "" -and $EsExtendedRoot -ne "") {
 }
 
 if ($FxManifestPath -eq "") {
-    Write-Host "Usage:"
+    Write-Host "Usage (pick ONE switch; not both on the same line):"
     Write-Host '  .\patch-es_extended-ox_lib.ps1 -EsExtendedRoot "D:\FXServer\resources\[core]\es_extended"'
     Write-Host '  .\patch-es_extended-ox_lib.ps1 -FxManifestPath "D:\FXServer\resources\[core]\es_extended\fxmanifest.lua"'
     Write-Host ""
-    Write-Host "Tip: paths must exist on this PC. Folder name [core] is fine; keep quoting as in the examples above."
+    Write-Host "On Windows VPS, if you do not know the path, run first:"
+    Write-Host "  .\find-es_extended.ps1"
+    Write-Host "or:"
+    Write-Host '  .\find-es_extended.ps1 -SearchRoot ''D:\path\to\resources'''
     exit 1
 }
 
