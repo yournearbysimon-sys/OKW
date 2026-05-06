@@ -3,6 +3,7 @@
   const canvas = document.getElementById("okw-ecg-canvas");
   const bpmEl = document.getElementById("okw-bpm");
   const hpEl = document.getElementById("okw-hp");
+  const rootStyle = document.documentElement.style;
 
   if (!mount || !canvas || !bpmEl || !hpEl) return;
   const ctx = canvas.getContext("2d");
@@ -10,18 +11,57 @@
   let healthPct = 100;
   let stripEnabled = false;
 
+  function applyLayout(data) {
+    if (!data) return;
+    if (data.enabled === false || data.hidden === true) {
+      stripEnabled = false;
+      mount.style.display = "none";
+      return;
+    }
+    stripEnabled = true;
+    mount.style.display = "block";
+
+    if (data.offsetLeft) {
+      rootStyle.setProperty("--ecg-left", data.offsetLeft);
+      rootStyle.setProperty("--ecg-right", "auto");
+    } else if (data.offsetRight) {
+      rootStyle.setProperty("--ecg-right", data.offsetRight);
+      rootStyle.setProperty("--ecg-left", "auto");
+    }
+
+    if (data.offsetBottom) {
+      rootStyle.setProperty("--ecg-bottom", data.offsetBottom);
+      rootStyle.setProperty("--ecg-top", "auto");
+    } else if (data.offsetTop) {
+      rootStyle.setProperty("--ecg-top", data.offsetTop);
+      rootStyle.setProperty("--ecg-bottom", "auto");
+    }
+
+    if (data.stripWidth) rootStyle.setProperty("--ecg-width", data.stripWidth);
+
+    rootStyle.setProperty("--ecg-tx", data.translateX || "0px");
+    rootStyle.setProperty("--ecg-ty", data.translateY || "0px");
+  }
+
   window.addEventListener("message", function (ev) {
     const d = ev.data;
     if (!d || !d.action) return;
 
     if (d.action === "okwHealthEcgInit") {
-      stripEnabled = !!d.data && !!d.data.enabled;
-      mount.style.display = stripEnabled ? "block" : "none";
-      if (!stripEnabled) return;
       const c = d.data || {};
-      if (c.offsetLeft) document.documentElement.style.setProperty("--ecg-left", c.offsetLeft);
-      if (c.offsetBottom) document.documentElement.style.setProperty("--ecg-bottom", c.offsetBottom);
-      if (c.stripWidth) document.documentElement.style.setProperty("--ecg-width", c.stripWidth);
+      applyLayout({
+        enabled: !!c.enabled,
+        hidden: !c.enabled,
+        offsetLeft: c.offsetLeft,
+        offsetBottom: c.offsetBottom,
+        stripWidth: c.stripWidth,
+        translateX: "0px",
+        translateY: "0px",
+      });
+    }
+
+    if (d.action === "okwHealthEcgLayout") {
+      applyLayout(d.data || {});
     }
 
     if (d.action === "okwHealthEcgVitals") {

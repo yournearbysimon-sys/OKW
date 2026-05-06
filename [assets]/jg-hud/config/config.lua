@@ -76,14 +76,17 @@ Config.UpdateRadarZoom = true -- Enable this if radar is flicking/disappearing
 Config.DevDeleteAllUserSettingsOnStart = true -- Delete player existing KVP when they log in?
 Config.Debug = false
 
--- OKW: cardiac / BPM strip under status icons (HTML+assets in web/dist; toggles here)
+-- Match /hud layout (hud-layout KVP): okwHealthEcg block in default-settings.json. Set mergeDefaultLayout false if you manage KVP yourself.
 Config.HealthEcg = {
     Enabled = true,
     offsetLeft = "0.55vw",
-    -- Smaller bottom = strip closer to minimap (under icon row). Tune 2vh–5vh.
+    -- Smaller bottom = strip closer to minimap (under icon row). Tune 2vh–5vh. Used when not using hud layout sync.
     offsetBottom = "2.75vh",
     stripWidth = "clamp(268px, 34vw, 440px)",
     updateIntervalMs = 100,
+    syncLayoutFromKvp = true,
+    mergeDefaultLayout = true,
+    layoutPollMs = 750,
 }
 
 -- OKW: print HUD layout/settings to the client console (open with F8, then type hudexport). Optional keybind below (F8 often opens console, so default is F9).

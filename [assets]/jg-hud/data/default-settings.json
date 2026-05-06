@@ -650,6 +650,20 @@
         "x": 290
       }
     },
+    "okwHealthEcg": {
+      "dimensions": {
+        "width": 400,
+        "height": 88
+      },
+      "offset": {
+        "left": 11,
+        "bottom": 30,
+        "x": 11,
+        "y": 962,
+        "offsetY": 0,
+        "offsetX": 0
+      }
+    },
     "circularMinimap": {
       "dimensions": {
         "width": 196.3636363636364,
