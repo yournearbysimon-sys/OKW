@@ -160,7 +160,8 @@ function OkwHealthEcg_ApplyLayoutNow()
 end
 
 CreateThread(function()
-    Wait(1600)
+    -- Apply saved KVP layout as soon as NUI is up; strip stays hidden until okwHealthEcgLayout enables it.
+    Wait(400)
     if ecg.Enabled == false then
         SendNUIMessage({
             action = "okwHealthEcgLayout",

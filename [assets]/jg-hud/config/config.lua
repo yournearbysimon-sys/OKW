@@ -77,7 +77,7 @@ Config.DevDeleteAllUserSettingsOnStart = true -- Delete player existing KVP when
 Config.Debug = false
 
 -- OKW cardiac strip: lives outside jg-hud React — /hud cannot drag it as one box (fragmented handles).
--- Use /ecglayout (ox_lib) to set px position; stored in resource KVP okw-ecg-layout. /hud + hudexport still apply to native widgets only.
+-- Use /ecglayout (ox_lib) to set px position; Confirm writes resource KVP (persistent across restarts). /hud + hudexport still apply to native widgets only.
 Config.HealthEcg = {
     Enabled = true,
     offsetLeft = "0.55vw",
