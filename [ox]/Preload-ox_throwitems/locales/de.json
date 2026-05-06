@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "Prop ist keine Zahl: %s (%s)",
+    "model_invalid":  "Modell nicht in cdimage/ungültig: roh=%s hash=%s",
+    "model_not_object":  "Modell ist kein Objekt (Ped/Fahrzeug): roh=%s hash=%s",
+    "invalid_slot":  "Ungültiger Slot",
+    "no_prop_mapped":  "Kein Prop für \"%s\" zugeordnet",
+    "invalid_prop":  "Ungültiges Prop: %s",
+    "place_controls":  "[LMB] Bestätigen\n[ESC] Abbrechen",
+    "drop_label":  "Fallen lassen",
+    "drop_items_rebuilt":  "[inv-props] Drop-Item-Zuordnung neu aufgebaut (%d Einträge)"
+}
+

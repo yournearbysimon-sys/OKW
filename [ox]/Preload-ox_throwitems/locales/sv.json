@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop är inte ett nummer: %s (%s)",
+    "model_invalid":  "modell finns inte i cdimage/är ogiltig: raw=%s hash=%s",
+    "model_not_object":  "modell är inte ett objekt (ped/fordon): raw=%s hash=%s",
+    "invalid_slot":  "Ogiltig slot",
+    "no_prop_mapped":  "Ingen prop är mappad för \"%s\"",
+    "invalid_prop":  "Ogiltig prop: %s",
+    "place_controls":  "[LMB] Bekräfta\n[ESC] Avbryt",
+    "drop_label":  "Kasta",
+    "drop_items_rebuilt":  "[inv-props] Karta över drop-props byggdes om (%d poster)"
+}
+

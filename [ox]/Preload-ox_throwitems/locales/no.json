@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop er ikke et tall: %s (%s)",
+    "model_invalid":  "modell finnes ikke i cdimage / er ugyldig: raw=%s hash=%s",
+    "model_not_object":  "modell er ikke et objekt (ped/kjøretøy): raw=%s hash=%s",
+    "invalid_slot":  "Ugyldig slot",
+    "no_prop_mapped":  "Ingen prop er knyttet til \"%s\"",
+    "invalid_prop":  "Ugyldig prop: %s",
+    "place_controls":  "[LMB] Bekreft\n[ESC] Avbryt",
+    "drop_label":  "Slipp",
+    "drop_items_rebuilt":  "[inv-props] Kart over dropproper ble bygget på nytt (%d oppføringer)"
+}
+

@@ -1,0 +1,210 @@
+{
+    "logo": "logo.jpg",
+    "logoFilter": "drop-shadow(0px 0px 14px rgba(255, 255, 255, 0.548))",
+    "videoBackground": {
+        "enable": true,
+        "url": "https://r2.fivemanage.com/ndFcLdpEBmH5hfeWfIGW9/myvid.mp4"
+    },
+    "imageBackground": {
+        "enable": false,
+        "images": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg",
+            "6.jpg",
+            "7.jpg"
+        ]
+    },
+    "music": {
+        "hideButPlay": false,
+        "enable": true,
+        "autoplay": true,
+        "loopPlaylist": true,
+        "volume": 0.05,
+        "tracks": [
+            {
+                "title": "Stardust",
+                "file": "track1.mp3",
+                "image": "track3.jpg"
+            },
+            {
+                "title": "Lady Hear Me Tonight",
+                "file": "track2.mp3",
+                "image": "track2.jpg"
+            }
+        ]
+    },
+    "tips": {
+        "enable": true,
+        "list": [
+            "Stay in character at all times — let your character think, react, and speak as they would.",
+            "Give others room to roleplay — don’t rush scenes, let stories breathe.",
+            "Actions speak louder than words — use emotes and descriptions to show what your character does.",
+            "Don’t force RP — create opportunities, not outcomes.",
+            "Losing is part of RP — let your character fail sometimes, it makes stories better.",
+            "Don’t break immersion — avoid using OOC unless absolutely needed.",
+            "Remember: your character isn’t you — keep emotions separate.",
+            "Build your story through relationships — talk, interact, form connections.",
+            "Give meaningful reactions — even small events can shape your character.",
+            "Don’t chase action — slice-of-life moments often create the best roleplay."
+        ]
+    },
+    "links": {
+        "enable": true,
+        "list": [
+            {
+                "icon": "bring_your_own_ip",
+                "link": "https://discord.gg/otherplanet"
+            },
+            {
+                "icon": "store",
+                "link": "https://otherplanet.dev"
+            },
+            {
+                "icon": "video_chat",
+                "link": "https://tiktok.com/u/otherplanetdev"
+            }
+        ]
+    },
+    "loadingBar": true,
+    "buttons": true,
+    "faq": {
+        "enable": true,
+        "list": [
+            {
+                "icon": "fa-solid fa-circle-question",
+                "q": "What is the server about?",
+                "a": "Our server focuses on immersive roleplay with custom systems, realistic economy, and unique gameplay mechanics."
+            },
+            {
+                "icon": "fa-solid fa-circle-question",
+                "q": "What are the basic RP rules?",
+                "a": "Value your life, avoid RDM/VDM, stay in character, and always roleplay your actions realistically."
+            },
+            {
+                "icon": "fa-solid fa-circle-question",
+                "q": "Can I play with my friends?",
+                "a": "Of course! Just make sure all interactions follow RP rules and don’t break immersion for others."
+            },
+            {
+                "icon": "fa-solid fa-circle-question",
+                "q": "Is there economy progression?",
+                "a": "Yes. You can earn money through legal and illegal jobs, purchase vehicles, properties and participate in various activities."
+            },
+            {
+                "icon": "fa-solid fa-circle-question",
+                "q": "What should I do if I encounter a cheater?",
+                "a": "Take a clip and report it on Discord in the proper section. Staff will handle it as fast as possible."
+            },
+            {
+                "icon": "fa-solid fa-circle-question",
+                "q": "Is voice communication required?",
+                "a": "Yes, a working microphone is required for proper voice roleplay and server interactions."
+            },
+            {
+                "icon": "fa-solid fa-circle-question",
+                "q": "Can I create a gang or organization?",
+                "a": "Yes. You can apply for a gang slot through Discord. Approved groups receive custom tools and features."
+            },
+            {
+                "icon": "fa-solid fa-circle-question",
+                "q": "What should I do if I find a bug?",
+                "a": "Record it or describe it clearly and open a ticket on Discord. Developers will review and fix it asap."
+            }
+        ]
+    },
+    "rules": {
+        "enable": true,
+        "list": [
+            {
+                "icon": "fa-solid fa-gun",
+                "name": "RDM",
+                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor eget neque eget accumsan. Cras eget urna eu justo maximus volutpat sed ut velit. Aliquam id velit quis metus tincidunt pharetra at non ante. Praesent dictum eget felis vitae tristique. Nam enim neque, hendrerit id elit a, laoreet aliquam tellus. Suspendisse ullamcorper tellus id mi feugiat finibus. In lacinia at nulla eu finibus. Sed in convallis elit, quis molestie ipsum. Sed finibus, ligula ut cursus efficitur, orci felis accumsan leo, eu placerat ipsum quam in felis. Mauris laoreet diam sit amet vehicula mollis. Vivamus sit amet turpis at tortor imperdiet hendrerit ac vel enim. Etiam faucibus arcu risus, sed efficitur leo scelerisque non."
+            },
+            {
+                "icon": "fa-solid fa-car-burst",
+                "name": "VDM",
+                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor eget neque eget accumsan. Cras eget urna eu justo maximus volutpat sed ut velit. Aliquam id velit quis metus tincidunt pharetra at non ante. Praesent dictum eget felis vitae tristique. Nam enim neque, hendrerit id elit a, laoreet aliquam tellus. Suspendisse ullamcorper tellus id mi feugiat finibus. In lacinia at nulla eu finibus. Sed in convallis elit, quis molestie ipsum. Sed finibus, ligula ut cursus efficitur, orci felis accumsan leo, eu placerat ipsum quam in felis. Mauris laoreet diam sit amet vehicula mollis. Vivamus sit amet turpis at tortor imperdiet hendrerit ac vel enim. Etiam faucibus arcu risus, sed efficitur leo scelerisque non."
+            },
+            {
+                "icon": "fa-brands fa-discord",
+                "name": "META GAMING",
+                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor eget neque eget accumsan. Cras eget urna eu justo maximus volutpat sed ut velit. Aliquam id velit quis metus tincidunt pharetra at non ante. Praesent dictum eget felis vitae tristique. Nam enim neque, hendrerit id elit a, laoreet aliquam tellus. Suspendisse ullamcorper tellus id mi feugiat finibus. In lacinia at nulla eu finibus. Sed in convallis elit, quis molestie ipsum. Sed finibus, ligula ut cursus efficitur, orci felis accumsan leo, eu placerat ipsum quam in felis. Mauris laoreet diam sit amet vehicula mollis. Vivamus sit amet turpis at tortor imperdiet hendrerit ac vel enim. Etiam faucibus arcu risus, sed efficitur leo scelerisque non."
+            },
+            {
+                "icon": "fa-solid fa-plug",
+                "name": "POWER GAMING",
+                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor eget neque eget accumsan. Cras eget urna eu justo maximus volutpat sed ut velit. Aliquam id velit quis metus tincidunt pharetra at non ante. Praesent dictum eget felis vitae tristique. Nam enim neque, hendrerit id elit a, laoreet aliquam tellus. Suspendisse ullamcorper tellus id mi feugiat finibus. In lacinia at nulla eu finibus. Sed in convallis elit, quis molestie ipsum. Sed finibus, ligula ut cursus efficitur, orci felis accumsan leo, eu placerat ipsum quam in felis. Mauris laoreet diam sit amet vehicula mollis. Vivamus sit amet turpis at tortor imperdiet hendrerit ac vel enim. Etiam faucibus arcu risus, sed efficitur leo scelerisque non."
+            },
+            {
+                "icon": "fa-solid fa-arrow-right-from-bracket",
+                "name": "COMBAT LOG",
+                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor eget neque eget accumsan. Cras eget urna eu justo maximus volutpat sed ut velit. Aliquam id velit quis metus tincidunt pharetra at non ante. Praesent dictum eget felis vitae tristique. Nam enim neque, hendrerit id elit a, laoreet aliquam tellus. Suspendisse ullamcorper tellus id mi feugiat finibus. In lacinia at nulla eu finibus. Sed in convallis elit, quis molestie ipsum. Sed finibus, ligula ut cursus efficitur, orci felis accumsan leo, eu placerat ipsum quam in felis. Mauris laoreet diam sit amet vehicula mollis. Vivamus sit amet turpis at tortor imperdiet hendrerit ac vel enim. Etiam faucibus arcu risus, sed efficitur leo scelerisque non."
+            }
+        ]
+    },
+    "changelog": {
+        "enable": true,
+        "list": [
+            {
+                "name": "Update v1.0.4",
+                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor eget neque eget accumsan. Cras eget urna eu justo maximus volutpat sed ut velit. Aliquam id velit quis metus tincidunt pharetra at non ante. Praesent dictum eget felis vitae tristique. Nam enim neque, hendrerit id elit a, laoreet aliquam tellus. Suspendisse ullamcorper tellus id mi feugiat finibus. In lacinia at nulla eu finibus. Sed in convallis elit, quis molestie ipsum. Sed finibus, ligula ut cursus efficitur, orci felis accumsan leo, eu placerat ipsum quam in felis. Mauris laoreet diam sit amet vehicula mollis. Vivamus sit amet turpis at tortor imperdiet hendrerit ac vel enim. Etiam faucibus arcu risus, sed efficitur leo scelerisque non."
+            },
+            {
+                "name": "Update v1.0.3",
+                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor eget neque eget accumsan. Cras eget urna eu justo maximus volutpat sed ut velit. Aliquam id velit quis metus tincidunt pharetra at non ante. Praesent dictum eget felis vitae tristique. Nam enim neque, hendrerit id elit a, laoreet aliquam tellus. Suspendisse ullamcorper tellus id mi feugiat finibus. In lacinia at nulla eu finibus. Sed in convallis elit, quis molestie ipsum. Sed finibus, ligula ut cursus efficitur, orci felis accumsan leo, eu placerat ipsum quam in felis. Mauris laoreet diam sit amet vehicula mollis. Vivamus sit amet turpis at tortor imperdiet hendrerit ac vel enim. Etiam faucibus arcu risus, sed efficitur leo scelerisque non."
+            },
+            {
+                "name": "Update v1.0.2",
+                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor eget neque eget accumsan. Cras eget urna eu justo maximus volutpat sed ut velit. Aliquam id velit quis metus tincidunt pharetra at non ante. Praesent dictum eget felis vitae tristique. Nam enim neque, hendrerit id elit a, laoreet aliquam tellus. Suspendisse ullamcorper tellus id mi feugiat finibus. In lacinia at nulla eu finibus. Sed in convallis elit, quis molestie ipsum. Sed finibus, ligula ut cursus efficitur, orci felis accumsan leo, eu placerat ipsum quam in felis. Mauris laoreet diam sit amet vehicula mollis. Vivamus sit amet turpis at tortor imperdiet hendrerit ac vel enim. Etiam faucibus arcu risus, sed efficitur leo scelerisque non."
+            },
+            {
+                "name": "Update v1.0.1",
+                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor eget neque eget accumsan. Cras eget urna eu justo maximus volutpat sed ut velit. Aliquam id velit quis metus tincidunt pharetra at non ante. Praesent dictum eget felis vitae tristique. Nam enim neque, hendrerit id elit a, laoreet aliquam tellus. Suspendisse ullamcorper tellus id mi feugiat finibus. In lacinia at nulla eu finibus. Sed in convallis elit, quis molestie ipsum. Sed finibus, ligula ut cursus efficitur, orci felis accumsan leo, eu placerat ipsum quam in felis. Mauris laoreet diam sit amet vehicula mollis. Vivamus sit amet turpis at tortor imperdiet hendrerit ac vel enim. Etiam faucibus arcu risus, sed efficitur leo scelerisque non."
+            },
+            {
+                "name": "Update v1.0.0",
+                "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor eget neque eget accumsan. Cras eget urna eu justo maximus volutpat sed ut velit. Aliquam id velit quis metus tincidunt pharetra at non ante. Praesent dictum eget felis vitae tristique. Nam enim neque, hendrerit id elit a, laoreet aliquam tellus. Suspendisse ullamcorper tellus id mi feugiat finibus. In lacinia at nulla eu finibus. Sed in convallis elit, quis molestie ipsum. Sed finibus, ligula ut cursus efficitur, orci felis accumsan leo, eu placerat ipsum quam in felis. Mauris laoreet diam sit amet vehicula mollis. Vivamus sit amet turpis at tortor imperdiet hendrerit ac vel enim. Etiam faucibus arcu risus, sed efficitur leo scelerisque non."
+            }
+        ]
+    },
+    "keybinds": {
+        "enable": true,
+        "list": [
+            {
+                "key": "U",
+                "desc": "Close/Open Vehicles"
+            },
+            {
+                "key": "L",
+                "desc": "Toggle Lights"
+            },
+            {
+                "key": "CAPS LOCK",
+                "desc": "Open guns menu"
+            },
+            {
+                "key": "T",
+                "desc": "Use Chat"
+            },
+            {
+                "key": "1",
+                "desc": "Toggle Inventory Bind"
+            }
+        ]
+    },
+    "translations": {
+        "faq": "Frequently Asked Questions",
+        "nowplay": "Now Playing",
+        "rules": "Rules",
+        "faqheader": "Faq",
+        "changelog": "Changelog",
+        "keybinds": "Keybinds",
+        "keybinds_header": "Keybinds List",
+        "keybinds_desc": "Click on your keyboard or on UI Keyboard to check what selected key is doing!",
+        "keybinds_pressed": "Pressed Key",
+        "keybinds_noassigned": "This key has no action assigned"
+    }
+}

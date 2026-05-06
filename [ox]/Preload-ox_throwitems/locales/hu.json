@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "a prop nem szám: %s (%s)",
+    "model_invalid":  "a modell nincs a cdimage-ben / érvénytelen: raw=%s hash=%s",
+    "model_not_object":  "a modell nem objektum (ped/jármű): raw=%s hash=%s",
+    "invalid_slot":  "Érvénytelen slot",
+    "no_prop_mapped":  "Nincs prop hozzárendelve ehhez: \"%s\"",
+    "invalid_prop":  "Érvénytelen prop: %s",
+    "place_controls":  "[LMB] Megerősítés\n[ESC] Mégsem",
+    "drop_label":  "Eldobás",
+    "drop_items_rebuilt":  "[inv-props] A ledobott propok térképe újraépült (%d bejegyzés)"
+}
+

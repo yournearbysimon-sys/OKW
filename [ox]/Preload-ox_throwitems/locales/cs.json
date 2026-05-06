@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop není číslo: %s (%s)",
+    "model_invalid":  "model není v cdimage / je neplatný: raw=%s hash=%s",
+    "model_not_object":  "model není objekt (ped/vozidlo): raw=%s hash=%s",
+    "invalid_slot":  "Neplatný slot",
+    "no_prop_mapped":  "Pro \"%s\" není namapovaný prop",
+    "invalid_prop":  "Neplatný prop: %s",
+    "place_controls":  "[LMB] Potvrdit\n[ESC] Zrušit",
+    "drop_label":  "Vyhodit",
+    "drop_items_rebuilt":  "[inv-props] Mapa drop propů byla znovu vytvořena (%d položek)"
+}
+

@@ -1,0 +1,5 @@
+Insert the .sql file only if you're getting errors with Auto Mysql.
+Script should create databases automatically!
+
+- insert-me.sql -- Insert it on every framework
+- insert-esx / insert-qb -- Insert it depending on your framework.

@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "الـ prop ليس رقماً: %s (%s)",
+    "model_invalid":  "الموديل غير موجود في cdimage/غير صالح: raw=%s hash=%s",
+    "model_not_object":  "الموديل ليس كائناً (ped/veh): raw=%s hash=%s",
+    "invalid_slot":  "خانة غير صالحة",
+    "no_prop_mapped":  "لا يوجد prop مرتبط بـ \"%s\"",
+    "invalid_prop":  "prop غير صالح: %s",
+    "place_controls":  "[LMB] تأكيد\n[ESC] إلغاء",
+    "drop_label":  "إسقاط",
+    "drop_items_rebuilt":  "[inv-props] تمت إعادة بناء خريطة props الخاصة بالإسقاط (%d إدخالات)"
+}
+

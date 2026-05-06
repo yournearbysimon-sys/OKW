@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop ei ole numero: %s (%s)",
+    "model_invalid":  "mallia ei löydy cdimage-tiedostosta / se on virheellinen: raw=%s hash=%s",
+    "model_not_object":  "malli ei ole objekti (ped/ajoneuvo): raw=%s hash=%s",
+    "invalid_slot":  "Virheellinen slotti",
+    "no_prop_mapped":  "Objektille \"%s\" ei ole määritetty proppia",
+    "invalid_prop":  "Virheellinen prop: %s",
+    "place_controls":  "[LMB] Vahvista\n[ESC] Peruuta",
+    "drop_label":  "Pudota",
+    "drop_items_rebuilt":  "[inv-props] Pudotusproppien kartta rakennettiin uudelleen (%d merkintää)"
+}
+

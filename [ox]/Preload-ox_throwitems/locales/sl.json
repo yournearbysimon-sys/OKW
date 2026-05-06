@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop ni število: %s (%s)",
+    "model_invalid":  "model ni v cdimage / je neveljaven: raw=%s hash=%s",
+    "model_not_object":  "model ni predmet (ped/vozilo): raw=%s hash=%s",
+    "invalid_slot":  "Neveljaven slot",
+    "no_prop_mapped":  "Ni mapiranega propa za \"%s\"",
+    "invalid_prop":  "Neveljaven prop: %s",
+    "place_controls":  "[LMB] Potrdi\n[ESC] Prekliči",
+    "drop_label":  "Spusti",
+    "drop_items_rebuilt":  "[inv-props] Zemljevid drop propov je bil obnovljen (%d vnosov)"
+}
+

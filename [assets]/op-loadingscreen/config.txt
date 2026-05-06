@@ -1,0 +1,1 @@
+Config file is located in web/build/config.json

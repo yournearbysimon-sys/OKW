@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop ei ole number: %s (%s)",
+    "model_invalid":  "mudelit pole cdimage\u0027is / see on vigane: raw=%s hash=%s",
+    "model_not_object":  "mudel ei ole objekt (ped/sõiduk): raw=%s hash=%s",
+    "invalid_slot":  "Vigane slot",
+    "no_prop_mapped":  "Üksusele \"%s\" pole propi määratud",
+    "invalid_prop":  "Vigane prop: %s",
+    "place_controls":  "[LMB] Kinnita\n[ESC] Tühista",
+    "drop_label":  "Viska maha",
+    "drop_items_rebuilt":  "[inv-props] Drop-proppide kaart taastati (%d kirjet)"
+}
+

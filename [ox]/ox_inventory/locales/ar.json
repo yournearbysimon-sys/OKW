@@ -1,0 +1,276 @@
+{
+  "ui_use": "إستعمال",
+  "ui_give": "إعطاء",
+  "ui_close": "إغلاق",
+  "ui_drop": "رمي",
+  "ui_removeattachments": "الغاء الملحق",
+  "ui_copy": "نسخ الكود",
+  "ui_durability": "المتانة",
+  "ui_ammo": "الرصاص",
+  "ui_serial": "الكود",
+  "ui_components": "الملحقات",
+  "ui_tint": "الصبعة",
+  "ui_usefulcontrols": "عناصر تحكم مفيدة",
+  "ui_rmb": "فتح قائمة التحكات",
+  "ui_ctrl_lmb": "نقل سريع لـ العناصر في مخزون آخر",
+  "ui_shift_drag": "قسم كمية إلى نصف",
+  "ui_ctrl_shift_lmb": "نقل سريع نصف كومة من العناصر في مخزون آخر",
+  "ui_alt_lmb": "استخدام سريع عنصر",
+  "ui_ctrl_c": "عند تحوم فوق سلاح فإن النسخ هو لـ الرقم التسلسلي",
+  "ui_remove_ammo": "إزالة الذخيرة",
+  "ammo_type": "نوع الذخيرة",
+  "$": "$",
+  "male": "رجل",
+  "female": "مرأة",
+  "used": "استعملت",
+  "ui_removed": "-",
+  "ui_added": "+",
+  "ui_holstered": "حازم",
+  "ui_equipped": "مسلح",
+  "using": "%s استعمال",
+  "inventory_setup": "الحقيبة جاهز للاستخدام",
+  "inventory_player_access": "لا يمكنك فتح المخزون الخاص بك الآن",
+  "inventory_right_access": "لا يمكنك فتح هذا المخزون",
+  "inventory_lost_access": "لم تعد قادرة على الوصول إلى هذه المخزون",
+  "wrong_ammo": "%s غير ممكن مع %s",
+  "license": "ترخيص",
+  "already_have": "لديك بالفعل ترخيص الأسلحة",
+  "have_purchased": "لقد اشتريت ترخيص أسلحة",
+  "can_not_afford": "لا يمكنك تحمل ترخيص الأسلحة",
+  "purchase_license": "ﺔﺼﺧﺭ ﺀﺍﺮﺷ",
+  "interact_prompt": "Interact with [%s]",
+  "weapon_unregistered": "%s غير مسجل لأي شخص",
+  "weapon_registered": "%s (%s) مسجل في %s",
+  "weapon_broken": "هذا السلاح مكسور",
+  "vehicle_locked": "تم حبس السيارة",
+  "nobody_nearby": "لا يوجد أحد في مكان قريب",
+  "give_amount": "يجب إدخال مبلغ لإعطاء",
+  "buy_amount": "يجب إدخال مبلغ لشراء",
+  "component_has": "%s هذا السلاح لديه بالفعل",
+  "component_invalid": "%s هذا السلاح غير متوافق مع",
+  "component_slot_occupied": "هذه الخانة مشغولة بالفعل",
+  "cannot_perform": "لا يمكنك تنفيذ هذا الإجراء",
+  "cannot_carry": "لا يمكنك حمل ذلك كثيرا",
+  "cannot_carry_other": "المخزون المستهدف لا يمكن أن يحمل الكثير",
+  "cannot_carry_limit": "لا يمكنك حمل أكثر من %s %s",
+  "cannot_carry_limit_other": "الهدف لا يمكن أن تحمل أكثر من %s %s",
+  "items_confiscated": "تم صوادر البنود الخاصة بك",
+  "items_returned": "تم إرجاع البنود الخاصة بك",
+  "item_unauthorised": "أنت غير مصرح لك بشراء هذا البند",
+  "item_unlicensed": "أنت غير مرخص لشراء هذا البند",
+  "item_not_enough": "%s ليس لديك ما يكفي",
+  "cannot_afford": "(%s) لا يمكنك تحمل ذلك",
+  "stash_lowgrade": "أنت غير مخول لأخذ هذا البند",
+  "cannot_use": "%s غير قادر على الاستخدام",
+  "shop_nostock": "البضاعة غير متوفرة",
+  "identification": "%s الجنس \n %s تاريخ الميلاد",
+  "search_dumpster": "بحث القمامة",
+  "open_label": "%s فتح",
+  "purchased_for": "%s %s = %s%s",
+  "unable_stack_items": "أنت غير قادر على تكديس هذه العناصر",
+  "police_evidence": "مخزن الأدلة",
+  "open_police_evidence": "فتح مخزن ادلة الشرطة",
+  "open_stash": "فتح حقيبة",
+  "locker_number": "رقم الخزانة",
+  "locker_no_value": "يجب أن تحتوي على قيمة لفتح الخزانة",
+  "locker_must_number": "يجب أن يكون الخزانة عددا",
+  "weapon_hand_required": "يجب أن يكون لديك سلاح في متناول اليد",
+  "weapon_hand_wrong": "سلاح خاطئ في متناول اليد",
+  "open_player_inventory": "فتح مخزون اللاعب~",
+  "open_secondary_inventory": "فتح الحقيبة الثانوية~",
+  "disable_hotbar": "عرض المخزون HOTBAR.~",
+  "reload_weapon": "تحديث سلاح~",
+  "use_hotbar": "استخدام عنصر هوتبار بند %s~",
+  "no_durability": "%s مكسور",
+  "cannot_give": "غير قادر على الاعطاء",
+  "evidence_cannot_take": "ليس درجة عالية بما فيه الكفاية لاتخاذ من الأدلة",
+  "dumpster": "القمامة",
+  "crafting_item": "تصنيع %s",
+  "crafting_bench": "طاولة تصنيع",
+  "open_crafting_bench": "فتح طاولة التصنيع",
+  "not_enough_durability": "%s لا يملك متانة كافية",
+  "storage": "التخزين",
+  "ui_confirm": "تأكيد",
+  "ui_confirming": "جاري التأكيد...",
+  "ui_split": "تقسيم",
+  "ui_inventory": "الحقيبة",
+  "ui_player": "اللاعب",
+  "ui_player_inventory": "حقيبة اللاعب",
+  "ui_pockets": "الجيوب",
+  "ui_items_on_character": "العناصر على الشخصية",
+  "ui_player_info": "بيانات اللاعب",
+  "ui_utility_slots": "خانات التجهيز",
+  "ui_available_items": "العناصر المتاحة",
+  "ui_name": "الاسم",
+  "ui_job_gang": "الوظيفة/العصابة",
+  "ui_cash": "النقد",
+  "ui_bank": "البنك",
+  "backpack": "الحقيبة الظهرية",
+  "body_armor": "الدرع",
+  "phone": "الهاتف",
+  "parachute": "المظلة",
+  "weapon_slot": "خانة السلاح",
+  "shopping_cart": "سلة الشراء",
+  "drag_items": "اسحب العناصر هنا للشراء",
+  "inventory_settings_title": "إعدادات الحقيبة",
+  "inventory_settings_subtitle": "تُحفظ جميع الإعدادات محليًا ويتم تطبيقها فورًا.",
+  "inventory_settings_binding_hint": "اضغط أي زر الآن لربطه.",
+  "inventory_settings_reset": "إعادة ضبط",
+  "inventory_settings_back": "رجوع",
+  "inventory_settings_shortcuts_title": "الاختصارات",
+  "inventory_settings_shortcuts_desc": "عدّل اختصارات الحقيبة الرئيسية ومفاتيح النقر المساعدة.",
+  "inventory_settings_quick_move_title": "النقل السريع",
+  "inventory_settings_quick_move_desc": "انقل العنصر فورًا بالنقر بدون سحبه.",
+  "inventory_settings_use_item_title": "استعمال العنصر",
+  "inventory_settings_use_item_desc": "استعمل عنصر اللاعب فورًا بالمفتاح المساعد المحدد.",
+  "inventory_settings_split_stack_title": "تقسيم الكمية",
+  "inventory_settings_split_stack_desc": "قسّم كمية عند نقلها بالاستمرار عبر الضغط على المفتاح المساعد المحدد.",
+  "inventory_settings_close_inventory_title": "إغلاق الحقيبة",
+  "inventory_settings_close_inventory_desc": "الزر المستخدم لإغلاق الحقيبة وهذه الصفحة.",
+  "inventory_settings_press_short": "اضغط...",
+  "inventory_settings_cancel": "إلغاء",
+  "inventory_settings_change": "تغيير",
+  "inventory_settings_behavior_title": "السلوك",
+  "inventory_settings_behavior_desc": "تفضيلات صغيرة تؤثر على طريقة عمل الحقيبة.",
+  "inventory_settings_remember_search_title": "تذكر البحث",
+  "inventory_settings_remember_search_desc": "احتفظ بآخر نص بحث عند إعادة فتح الحقيبة.",
+  "inventory_settings_remember_category_title": "تذكر التصنيف",
+  "inventory_settings_remember_category_desc": "احتفظ بمرشح التصنيف المحدد بين مرات الفتح.",
+  "inventory_settings_auto_open_permissions_title": "فتح الصلاحيات تلقائيًا",
+  "inventory_settings_auto_open_permissions_desc": "افتح صلاحيات المخازن وطاولات التصنيع تلقائيًا عند توفرها.",
+  "inventory_settings_drag_sounds_title": "أصوات السحب",
+  "inventory_settings_drag_sounds_desc": "شغّل صوت سحب الحقيبة عند نقل العناصر بين الخانات.",
+  "body_status_label": "الحالة:",
+  "body_status_injured": "مصاب",
+  "body_status_stable": "مستقر",
+  "body_coverage_label": "النطاق:",
+  "body_focus_label": "التأثير:",
+  "body_head_label": "الرأس",
+  "body_head_subtitle": "منطقة الجمجمة",
+  "body_head_description": "يتابع إصابات الجمجمة والوجه وأعلى الرقبة.",
+  "body_head_coverage": "الجمجمة، الوجه، الفك، الرقبة",
+  "body_head_focus": "الرؤية والتوازن والإدراك",
+  "body_torso_label": "الجذع",
+  "body_torso_subtitle": "الصدر والبطن",
+  "body_torso_description": "يتابع إصابات الصدر والعمود الفقري والبطن.",
+  "body_torso_coverage": "الصدر، الأضلاع، العمود الفقري، البطن",
+  "body_torso_focus": "التنفس والأعضاء الحيوية",
+  "body_right_arm_label": "الذراع اليمنى",
+  "body_right_arm_subtitle": "من الكتف إلى اليد",
+  "body_right_arm_description": "يتابع الطرف العلوي الأيمن بالكامل.",
+  "body_right_arm_coverage": "الكتف، الذراع، الساعد، اليد",
+  "body_right_arm_focus": "القبضة وحركة الذراع",
+  "body_left_arm_label": "الذراع اليسرى",
+  "body_left_arm_subtitle": "من الكتف إلى اليد",
+  "body_left_arm_description": "يتابع الطرف العلوي الأيسر بالكامل.",
+  "body_left_arm_coverage": "الكتف، الذراع، الساعد، اليد",
+  "body_left_arm_focus": "القبضة وحركة الذراع",
+  "body_right_leg_label": "الساق اليمنى",
+  "body_right_leg_subtitle": "من الورك إلى القدم",
+  "body_right_leg_description": "يتابع الطرف السفلي الأيمن بالكامل.",
+  "body_right_leg_coverage": "الورك، الفخذ، الركبة، الساق، القدم",
+  "body_right_leg_focus": "المشي والجري",
+  "body_left_leg_label": "الساق اليسرى",
+  "body_left_leg_subtitle": "من الورك إلى القدم",
+  "body_left_leg_description": "يتابع الطرف السفلي الأيسر بالكامل.",
+  "body_left_leg_coverage": "الورك، الفخذ، الركبة، الساق، القدم",
+  "body_left_leg_focus": "المشي والجري"
+  ,"crafting_role_member": "عضو"
+  ,"crafting_role_manager": "مدير"
+  ,"recipes": "التصنيع"
+  ,"recipes_and_crafting_queue": "الوصفات وقائمة التصنيع"
+  ,"no_items_found": "لم يتم العثور على عناصر"
+  ,"select_item_to_craft": "اختر عنصرًا للتصنيع"
+  ,"item_required": "العناصر المطلوبة"
+  ,"quantity": "الكمية"
+  ,"crafting_time": "مدة التصنيع"
+  ,"no_items_required": "لا توجد عناصر مطلوبة"
+  ,"add_to_queue": "أضف إلى القائمة"
+  ,"queue": "القائمة"
+  ,"queue_empty": "القائمة فارغة."
+  ,"items_waiting_to_craft": "عناصر بانتظار التصنيع"
+  ,"blueprint_required": "مخطط مطلوب"
+  ,"requires_xp": "يتطلب {xp} خبرة"
+  ,"total_cost": "التكلفة الإجمالية"
+  ,"pay_bank": "دفع عبر البنك"
+  ,"pay_money": "دفع نقدًا"
+  ,"pay_black_money": "دفع بالأموال القذرة"
+  ,"permissions_owner": "المالك"
+  ,"permissions_unknown": "غير معروف"
+  ,"permissions_roles": "الأدوار"
+  ,"permissions_permissions": "الصلاحيات"
+  ,"permissions_members": "الأعضاء"
+  ,"permissions_members_count": "{count} أعضاء"
+  ,"permissions_create_role": "إنشاء دور"
+  ,"permissions_create_role_title": "إنشاء دور"
+  ,"permissions_selected_role": "الدور المحدد"
+  ,"permissions_rename": "إعادة التسمية"
+  ,"permissions_rename_role": "إعادة تسمية الدور"
+  ,"permissions_delete": "حذف"
+  ,"permissions_delete_role": "حذف الدور"
+  ,"permissions_delete_role_confirm": "هل أنت متأكد من حذف هذا الدور؟"
+  ,"permissions_no_roles": "لا توجد أدوار"
+  ,"permissions_remove_member": "إزالة العضو"
+  ,"permissions_remove_member_confirm": "هل تريد إزالة هذا العضو من الدور المحدد؟"
+  ,"permissions_remove_access": "إزالة الوصول"
+  ,"permissions_loading": "جار تحميل الصلاحيات"
+  ,"permissions_unavailable": "غير متاح"
+  ,"permissions_unable_to_load": "تعذر تحميل الصلاحيات."
+  ,"permissions_select_role": "اختر دورًا"
+  ,"permissions_allowed": "مسموح"
+  ,"permissions_denied": "مرفوض"
+  ,"permissions_assigned_members": "الأعضاء المعيّنون"
+  ,"permissions_no_members_assigned": "لا يوجد أعضاء معيّنون"
+  ,"permissions_add_online_player_desc": "أضف لاعبًا متصلًا إلى هذا الدور من القائمة أدناه."
+  ,"permissions_no_online_members": "لا يوجد أعضاء متصلون متاحون"
+  ,"permissions_add_online_member": "إضافة عضو متصل..."
+  ,"permissions_player_id": "معرف اللاعب: {id}"
+  ,"permissions_role_name": "اسم الدور"
+  ,"permissions_save": "حفظ"
+  ,"permissions_cancel": "إلغاء"
+  ,"permissions_confirm": "تأكيد"
+  ,"permissions_no_nearby_players": "لا يوجد لاعبون قريبون"
+  ,"permissions_transfer": "نقل الملكية"
+  ,"bench_permissions_title": "صلاحيات طاولة التصنيع"
+  ,"bench_permissions_not_found": "لم يتم العثور على الطاولة"
+  ,"bench_permissions_empty_title": "لا توجد طاولة محددة"
+  ,"bench_permissions_empty_desc": "افتح طاولة تصنيع لإدارة صلاحياتها."
+  ,"bench_permissions_roles_desc": "اختر دورًا لفتح إعداداته وإدارة الوصول."
+  ,"bench_permissions_loading_desc": "جار جلب أدوار الطاولة ووصول الأعضاء."
+  ,"bench_permissions_select_role_desc": "افتح تبويب الأدوار واختر دورًا لإدارة الوصول إلى الطاولة."
+  ,"bench_permissions_role_access_desc": "اضبط الصلاحيات والوصول إلى الطاولة لهذا الدور."
+  ,"bench_permissions_assigned_members_desc": "إدارة الأعضاء المعيّنين لهذا الدور."
+  ,"bench_permissions_owner_card": "مالك الطاولة"
+  ,"bench_permissions_use_bench": "استخدام الطاولة"
+  ,"bench_permissions_use_bench_desc": "يمكنه فتح الطاولة واستخدامها"
+  ,"bench_permissions_move_bench": "تحريك الطاولة"
+  ,"bench_permissions_move_bench_desc": "يمكنه تغيير موقع الطاولة"
+  ,"bench_permissions_pack_bench": "حزم الطاولة"
+  ,"bench_permissions_pack_bench_desc": "يمكنه إعادة الطاولة إلى عنصر محمول"
+  ,"bench_permissions_manage_bench": "إدارة الطاولة"
+  ,"bench_permissions_manage_bench_desc": "يمكنه تعديل الأدوار والأعضاء"
+  ,"bench_permissions_global_title": "إعدادات الطاولة"
+  ,"bench_permissions_global_desc": "إدارة الإعدادات العامة لهذه الطاولة."
+  ,"bench_permissions_access_password": "كلمة مرور الوصول"
+  ,"bench_permissions_access_password_desc": "تجبر جميع اللاعبين على إدخال كلمة المرور لفتح الطاولة."
+  ,"bench_permissions_no_password": "لا توجد كلمة مرور"
+  ,"bench_permissions_disable_password_hint": "اتركها فارغة لتعطيل حماية كلمة المرور."
+  ,"stash_permissions_title": "صلاحيات المخزن"
+  ,"stash_permissions_not_found": "لم يتم العثور على المخزن"
+  ,"stash_permissions_empty_title": "لا يوجد مخزن محدد"
+  ,"stash_permissions_empty_desc": "افتح مخزنًا موضوعًا لإدارة صلاحياته."
+  ,"stash_permissions_roles_desc": "اختر دورًا لإدارة وصول المخزن والأعضاء."
+  ,"stash_permissions_loading_desc": "جار جلب أدوار المخزن ووصول الأعضاء."
+  ,"stash_permissions_select_role_desc": "افتح تبويب الأدوار واختر دورًا لإدارة الوصول إلى المخزن."
+  ,"stash_permissions_role_access_desc": "اضبط الصلاحيات والوصول إلى المخزن لهذا الدور."
+  ,"stash_permissions_assigned_members_desc": "إدارة الأعضاء المعيّنين لهذا الدور."
+  ,"stash_permissions_owner_card": "مالك المخزن"
+  ,"stash_permissions_use_stash": "استخدام المخزن"
+  ,"stash_permissions_use_stash_desc": "يمكنه فتح المخزن واستخدامه"
+  ,"stash_permissions_move_stash": "تحريك المخزن"
+  ,"stash_permissions_move_stash_desc": "يمكنه تغيير موقع المخزن"
+  ,"stash_permissions_pack_stash": "حزم المخزن"
+  ,"stash_permissions_pack_stash_desc": "يمكنه إعادة المخزن إلى عنصر محمول"
+  ,"stash_permissions_manage_stash": "إدارة المخزن"
+  ,"stash_permissions_manage_stash_desc": "يمكنه تعديل الأدوار والأعضاء"
+}

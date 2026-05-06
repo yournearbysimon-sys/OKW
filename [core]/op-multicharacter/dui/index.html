@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OP MULTICHAR TABLET</title>
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Wix+Madefor+Display:wght@400..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: transparent;
+            overflow: hidden;
+        }
+
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        div pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        font,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        figure,
+        header,
+        nav,
+        section,
+        article,
+        aside,
+        footer,
+        figcaption {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #MainBox {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(14, 14, 14);
+        }
+
+        #contentInside {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #wrap {
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            margin-top: -50px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Montserrat';
+            font-weight: 900;
+            font-size: 120px;
+            color: #fff;
+            line-height: 1 !important;
+            margin-bottom: 6px;
+        }
+
+        p {
+            text-align: center;
+            font-family: 'Work Sans';
+            font-weight: 300;
+            font-size: 28px;
+            color: #ffffff62;
+            line-height: 1 !important;
+        }
+
+        #locations {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            width: calc(100% - 400px);
+            padding: 0px 200px;
+            margin-top: 30px;
+        }
+
+        .location {
+            position: relative;
+            height: 240px;
+
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+            border: 2px solid #3d3d3d;
+            transition: all ease 0.3s;
+            cursor: pointer;
+        }
+
+        .location:hover {
+            opacity: 0.5;
+        }
+
+        h3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin: 20px;
+
+            font-family: 'Work Sans';
+            font-weight: 400;
+            font-size: 36px;
+            color: #fff;
+
+            z-index: 5000;
+        }
+
+        #shadow {
+            background-image: linear-gradient(180deg, rgba(89, 131, 252, 0) 0%, rgba(41, 53, 86, 0) 25%, rgba(89, 131, 252, 0) 50%, rgba(17, 17, 17, 0.808) 75%, rgb(22, 22, 22) 100%);
+
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        #clickChooseBtn {
+            outline: 0;
+            border: 0;
+            margin-top: 30px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            width: calc(100% - 400px);
+            text-align: center;
+
+            font-family: 'Montserrat';
+            font-weight: 900;
+            padding: 20px 0px;
+
+            font-size: 36px;
+            border-radius: 4px;
+
+            transition: all ease 0.3s;
+
+            background-color: rgb(255, 255, 255);
+            background-image: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(165, 165, 165) 100%);
+        }
+
+        #choosed_4,
+        #choosed_3,
+        #choosed_2,
+        #choosed_1 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 10px;
+            background-color: rgb(18, 240, 18) !important;
+            border-radius: 6px;
+
+            padding: 5px 24px;
+            color: #fff;
+        }
+
+        .disabledBadge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 10px;
+            background-color: rgb(240, 18, 18) !important;
+            border-radius: 6px;
+
+            padding: 5px 24px;
+            color: #fff;
+        }
+
+        .location.disabled {
+            cursor: not-allowed;
+            filter: grayscale(0.7);
+        }
+
+        .location.disabled:hover {
+            opacity: 1.0;
+        }
+
+        h2 {
+            font-family: 'Montserrat';
+            font-weight: 900;
+            font-size: 26px;
+        }
+
+        i {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="MainBox">
+        <div id="contentInside">
+
+        </div>
+    </div>
+
+    <script>
+        let currentChoosed = 1
+
+        window.addEventListener("DOMContentLoaded", function () {
+            fetch("https://op-multicharacter/onDuiReady", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ ready: true })
+            }).catch(err => console.error("Failed to send onReady:", err));
+        });
+
+        window.addEventListener("message", function (event) {
+            if (event.data.action == "setDetails") {
+                let insertInto = document.getElementById('contentInside')
+
+                const isInsideNew = (event.data.isInsideNew === true) || (event.data.isNew === true)
+
+                const isDisabledLoc = (loc) => {
+                    if (!isInsideNew) return false
+                    return loc && loc.isLastLocation === true
+                }
+
+                const locations = event.data.locations || {}
+                const disabledByIndex = {
+                    1: isDisabledLoc(locations.loc_1),
+                    2: isDisabledLoc(locations.loc_2),
+                    3: isDisabledLoc(locations.loc_3),
+                    4: isDisabledLoc(locations.loc_4),
+                }
+
+                // pick first enabled as default selection
+                currentChoosed = 1
+                for (let i = 1; i <= 4; i++) {
+                    if (!disabledByIndex[i]) {
+                        currentChoosed = i
+                        break
+                    }
+                }
+
+                const renderLoc = (idx) => {
+                    const loc = locations["loc_" + idx] || {}
+                    const disabled = disabledByIndex[idx] === true
+                    const opacity = (currentChoosed === idx) ? "0.5" : "1.0"
+                    const disabledClass = disabled ? "disabled" : ""
+                    const disabledHtml = disabled ? `
+                        <div class="disabledBadge" id="disabled_${idx}">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                            <h2>${event.data.disabled}</h2>
+                        </div>
+                    ` : ``
+
+                    const choosedDisplay = (currentChoosed === idx && !disabled) ? "flex" : "none"
+
+                    return `
+                        <div class="location ${disabledClass}" id="loc_${idx}"
+                            style="background-image: url('${loc.image}'); opacity: ${opacity};">
+                            <h3>${loc.label}</h3>
+
+                            <div id="shadow"></div>
+
+                            ${disabledHtml}
+
+                            <div id="choosed_${idx}" style="display: ${choosedDisplay};">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <h2>${event.data.selected}</h2>
+                            </div>
+                        </div>
+                    `
+                }
+
+                let html = `
+                    <div id="wrap">
+                        <div id="head">
+                            <h1>${event.data.header}</h1>
+                            <p>${event.data.desc}</p>
+                        </div>
+
+                        <div id="locations">
+                            ${renderLoc(1)}
+                            ${renderLoc(2)}
+                            ${renderLoc(3)}
+                            ${renderLoc(4)}
+                        </div>
+
+                        <button id="clickChooseBtn">${event.data.spawn}</button>
+                    </div>
+                `
+
+                insertInto.innerHTML = html
+            }
+
+            if (event.data.action === "hover") {
+                let id = "loc_" + event.data.id
+                document.getElementById(id).style.opacity = "0.5"
+            } else if (event.data.action === "unhover") {
+                if (currentChoosed == event.data.id) return;
+                let id = "loc_" + event.data.id
+                document.getElementById(id).style.opacity = "1.0"
+            } else if (event.data.action === "choosed") {
+
+                if (currentChoosed) {
+                    let id = "loc_" + currentChoosed
+                    document.getElementById(id).style.opacity = "1.0"
+                    document.getElementById("choosed_" + currentChoosed).style.display = "none"
+                }
+
+                currentChoosed = event.data.id
+                let id = "loc_" + event.data.id
+                document.getElementById(id).style.opacity = "0.5"
+                document.getElementById("choosed_" + event.data.id).style.display = "flex"
+            } else if (event.data.action === "button_hover") {
+                if (event.data.type == "hover") {
+                    document.getElementById("clickChooseBtn").style.opacity = "0.3"
+                } else {
+                    document.getElementById("clickChooseBtn").style.opacity = "1.0"
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

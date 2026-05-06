@@ -1,0 +1,549 @@
+Locales["bg"] = {
+    UI = {
+        quickFilters = {
+            clothes = {
+                upperBody = {
+                    label = "Горна част",
+                    subcategories = {
+                        jackets = "Якета",
+                        shirts = "Ризи",
+                        arms = "Ръце"
+                    }
+                },
+                lowerBody = {
+                    label = "Долна част",
+                    subcategories = {
+                        decals = "Декали",
+                        legs = "Крака",
+                        shoes = "Обувки"
+                    }
+                },
+                accessories = {
+                    label = "Аксесоари",
+                    subcategories = {
+                        masks = "Маски",
+                        backpacks = "Раници",
+                        chains = "Вериги"
+                    }
+                }
+            },
+            appearance = {
+                facial = {
+                    label = "Лице",
+                    subcategories = {
+                        hair = "Коса",
+                        eyebrows = "Вежди",
+                        eyecolor = "Цвят на очите"
+                    }
+                },
+                makeup = {
+                    label = "Грим",
+                    subcategories = {
+                        makeup = "Грим",
+                        blush = "Руж",
+                        lipstick = "Червило"
+                    }
+                },
+                skin = {
+                    label = "Кожа",
+                    subcategories = {
+                        blemishes = "Несъвършенства",
+                        complexion = "Тен",
+                        ageing = "Стареене"
+                    }
+                }
+            },
+            ["face-features"] = {
+                facial = {
+                    label = "Лице",
+                    subcategories = {
+                        nose = "Нос",
+                        eyebrows = "Вежди",
+                        cheeks = "Бузи"
+                    }
+                },
+                structure = {
+                    label = "Структура",
+                    subcategories = {
+                        jaw = "Челюст",
+                        chin = "Брада",
+                        neck = "Врат"
+                    }
+                },
+                features = {
+                    label = "Черти",
+                    subcategories = {
+                        eyesmouth = "Очи и устни",
+                        noseshape = "Форма на носа",
+                        cheekbones = "Скули"
+                    }
+                }
+            },
+            inheritance = {
+                genetics = {
+                    label = "Генетика",
+                    subcategories = {
+                        peds = "Ped",
+                        face = "Лице",
+                        pedscale = "Мащаб"
+                    }
+                },
+                heritage = {
+                    label = "Наследство",
+                    subcategories = {
+                        race = "Раса",
+                        facialmix = "Лицево миксиране",
+                        skinmix = "Кожно миксиране"
+                    }
+                },
+                blending = {
+                    label = "Смесване",
+                    subcategories = {
+                        model = "Модел",
+                        features = "Черти",
+                        ethnicity = "Етнос"
+                    }
+                }
+            },
+            props = {
+                head = {
+                    label = "Глава",
+                    subcategories = {
+                        hats = "Шапки",
+                        glasses = "Очила",
+                        ears = "Уши"
+                    }
+                },
+                accessories = {
+                    label = "Аксесоари",
+                    subcategories = {
+                        watches = "Часовници",
+                        bracelets = "Гривни",
+                        jewelry = "Бижута"
+                    }
+                },
+                wearables = {
+                    label = "За носене",
+                    subcategories = {
+                        eyewear = "Очила",
+                        earitems = "Обеци",
+                        watches = "Часовници"
+                    }
+                }
+            },
+            tattoos = {
+                upperBody = {
+                    label = "Горна част",
+                    subcategories = {
+                        head = "Глава",
+                        leftarm = "Лява ръка",
+                        rightarm = "Дясна ръка"
+                    }
+                },
+                lowerBody = {
+                    label = "Долна част",
+                    subcategories = {
+                        leftleg = "Лев крак",
+                        rightleg = "Десен крак"
+                    }
+                },
+                bodyArt = {
+                    label = "Телесно изкуство",
+                    subcategories = {
+                        chest = "Гръдна клетка",
+                        facetatoo = "Лице",
+                        arms = "Ръце"
+                    }
+                }
+            }
+        },
+        header= {
+          mainTitle= "ДРЕХИ",
+          subTitle= "ПЕРСОНАЛИЗИРАНЕ",
+          description=
+            "Персонализирайте външния вид на вашия герой! Изберете прически, тонове на кожата, аксесоари и много повече, за да направите играча си наистина уникален.",
+            export = 'Експорт',
+            import = 'Импорт',
+            head = 'Глава',
+            body = 'Тяло',
+            bottom = 'Дъно',
+        },
+        closeButton= {
+          title= "Затваряне",
+          description= "Меню за дрехи",
+        },
+        modal = {
+            save = {
+                primaryTitle = "ПОКУПКА",
+                noTaxes = "Без данъци",
+                secondaryTitle = "ДРЕХИ",
+                description = "Сигурни ли сте, че искате да закупите това? Това действие ще бъде необратимо."
+            },
+            exit = {
+                title = "Изход от кустомизация",
+                description = "Няма да бъдат запазени промените"
+            },
+            accept = "Да",
+            decline = "Не"
+        },
+        gender= "Пол",
+        ped = {
+            title = "Пед",
+            model = "Модел",
+            scale = 'Височина на Ped'
+        },
+        headBlend = {
+            title = "Генове",
+            description = "Променете наследството си",
+            shape = {
+                title = "Лице",
+                firstOption = "Баща",
+                secondOption = "Майка",
+                mix = "Микс"
+            },
+            skin = {
+                title = "Кожа",
+                firstOption = "Баща",
+                secondOption = "Майка",
+                mix = "Микс"
+            },
+            race = {
+                title = "Раса",
+                shape = "Вид",
+                skin = "Кожа",
+                mix = "Микс"
+            }
+        },
+        faceFeatures = {
+            title = "Характеристики на лицето",
+            description = "Персонализирайте чертите на лицето си",
+            nose = {
+                title = "Нос",
+                width = "Ширина",
+                height = "Височина",
+                size = "Размер",
+                boneHeight = "Кост височина",
+                boneTwist = "Кост усукване",
+                peakHeight = "Връх височина"
+            },
+            eyebrows = {
+                title = "Вежди",
+                height = "Височина",
+                depth = "Дълбочина"
+            },
+            cheeks = {
+                title = "Бузи",
+                boneHeight = "Кост височина",
+                boneWidth = "Кост ширина",
+                width = "Ширина"
+            },
+            eyesAndMouth = {
+                title = "Очи и уста",
+                eyesOpening = "Очи отваряне",
+                lipsThickness = "Устни дебелина"
+            },
+            jaw = {
+                title = "Челюст",
+                width = "Ширина",
+                size = "Размер"
+            },
+            chin = {
+                title = "Брадичка",
+                lowering = "Понижаване",
+                length = "Дължина",
+                size = "Размер",
+                hole = "Дупка размер"
+            },
+            neck = {
+                title = "Врат",
+                thickness = "Дебелина"
+            }
+        },
+        headOverlays = {
+            title = "Външен вид",
+            description = "Променете външния си вид",
+            hair = {
+                title = "Коса",
+                style = "Стил",
+                color = "Цвят",
+                highlight = "Силно осветена точка",
+                texture = "Текстура",
+                fade = "Избледняване"
+            },
+            opacity = "Непрозрачност",
+            style = "Стил",
+            color = "Цвят",
+            secondColor = "Втори цвят",
+            blemishes = "Петна",
+            beard = "Брада",
+            eyebrows = "Вежди",
+            ageing = "Състаряване",
+            makeUp = "Грим",
+            blush = "Изчервяване",
+            complexion = "Тен",
+            sunDamage = "Увреждане от слънцето",
+            lipstick = "Червило",
+            moleAndFreckles = "Бенки и лунички",
+            chestHair = "Косми по гърдите",
+            bodyBlemishes = "Петна по тялото",
+            eyeColor = "Цвят на очите"
+        },
+        components = {
+            title = "Дрехи",
+            description = "Персонализирайте облеклото си",
+            drawable = "Вид",
+            texture = "Текстура",
+            mask = "Маска",
+            upperBody = "Ръце",
+            lowerBody = "Крака",
+            bags = "Чанти и парашут",
+            shoes = "Обувки",
+            scarfAndChains = "Шал и вериги",
+            shirt = "Тениска",
+            bodyArmor = "Бронежилетка",
+            decals = "Ваденки",
+            jackets = "Якета",
+            head = "Глава"
+        },
+        props = {
+            title = "Обекти",
+            description = "Персонализирайте вашите реквизити",
+            drawable = "Вид",
+            texture = "Текстура",
+            hats = "Шапки и каски",
+            glasses = "Очила",
+            ear = "Обеци",
+            watches = "Часовници",
+            bracelets = "Гривни"
+        },
+        tattoos = {
+            title = "Татуировки",
+            description = "Приложете татуировки",
+            items = {
+                ZONE_TORSO = "Тяло",
+                ZONE_HEAD = "Глава",
+                ZONE_LEFT_ARM = "Лява ръка",
+                ZONE_RIGHT_ARM = "Дясна ръка",
+                ZONE_LEFT_LEG = "Ляв крак",
+                ZONE_RIGHT_LEG = "Десен крак"
+            },
+            apply = "Прилагане",
+            delete = "Премахване",
+            deleteAll = "Премахване на всички татуировки",
+            opacity = "Непрозрачност"
+        }
+    },
+    outfitManagement = {
+        title = "Управление на дрехите",
+        jobText = "Управление на дрехите за работа",
+        gangText = "Управление на дрехите за банда"
+    },
+    cancelled = {
+        title = "Отменена персонализация",
+        description = "Персонализацията не е запазена"
+    },
+    outfits = {
+        import = {
+            title = "Въведете код за дрехата",
+            menuTitle = "Импортиране на дрехата",
+            description = "Импортиране на дреха от код за споделяне",
+            name = {
+                label = "Име на дрехата",
+                placeholder = "Хубава дреха",
+                default = "Импортирана дреха"
+            },
+            code = {
+                label = "Код за дрехата"
+            },
+            success = {
+                title = "Дрехата е импортирана",
+                description = "Можете сега да се смените към дрехата, използвайки менюто за дрехите"
+            },
+            failure = {
+                title = "Грешка при импортирането",
+                description = "Невалиден код за дрехата"
+            }
+        },
+        generate = {
+            title = "Генериране на код за дрехата",
+            description = "Генериране на код за дреха за споделяне",
+            failure = {
+                title = "Нещо се обърка",
+                description = "Генерирането на код не бе успешно за дрехата"
+            },
+            success = {
+                title = "Кодът за дрехата е генериран",
+                description = "Ето вашия код за дрехата"
+            }
+        },
+        save = {
+            menuTitle = "Запазете текущата дреха",
+            menuDescription = "Запазете текущата ви дреха като %s дреха",
+            description = "Запазете текущата ви дреха",
+            title = "Именувайте вашата дреха",
+            managementTitle = "Управление на детайлите за дрехата",
+            name = {
+                label = "Име на дрехата",
+                placeholder = "Много хубава дреха"
+            },
+            gender = {
+                label = "Пол",
+                male = "Мъж",
+                female = "Жена"
+            },
+            rank = {
+                label = "Минимален ранг"
+            },
+            failure = {
+                title = "Запазването е неуспешно",
+                description = "Дреха с това име вече съществува"
+            },
+            success = {
+                title = "Успешно",
+                description = "Дреха %s е запазена"
+            }
+        },
+        update = {
+            title = "Обновяване на дреха",
+            description = "Запазете текущото ви дрехоподобрение в съществуваща дреха",
+            failure = {
+                title = "Обновяването е неуспешно",
+                description = "Тази дреха не съществува"
+            },
+            success = {
+                title = "Успешно",
+                description = "Дреха %s е обновена"
+            }
+        },
+        change = {
+            title = "Смени дрехата",
+            description = "Изберете от вашите запазени %s дрехи",
+            pDescription = "Изберете от вашите запазени дрехи",
+            failure = {
+                title = "Нещо се обърка",
+                description = "Дрехата, която се опитвате да смените, няма базов вид",
+            }
+        },
+        delete = {
+            title = "Изтрий дрехата",
+            description = "Изтрийте запазен %s дреха",
+            mDescription = "Изтрийте всяка от вашите запазени дрехи",
+            item = {
+                title = 'Изтрий "%s"',
+                description = "Модел: %s%s"
+            },
+            success = {
+                title = "Успех",
+                description = "Дрехата е изтрита"
+            }
+        },
+        manage = {
+            title = "👔 | Управлявай %s дрехи"
+        }
+    },
+    jobOutfits = {
+        title = "Работни Облекла",
+        description = "Изберете от всяко едно от вашите работни облекла"
+    },
+    menu = {
+        returnTitle = "Върни се",
+        title = "Облеклена Стая",
+        outfitsTitle = "Играчеви Облекла",
+        clothingShopTitle = "Магазин за Облекла",
+        barberShopTitle = "Магазин за Фризьорство",
+        tattooShopTitle = "Магазин за Татуси",
+        surgeonShopTitle = "Магазин за Хирургия"
+    },
+    clothing = {
+        title = "Купуване на Облекла - $%d",
+        titleNoPrice = "Смяна на Облекло",
+        options = {
+            title = "👔 | Опции на Магазина за Облекла",
+            description = "Изберете от голямо разнообразие на предмети за обличане"
+        },
+        outfits = {
+            title = "👔 | Опции на Костюмите",
+            civilian = {
+                title = "Граждански Костюм",
+                description = "Облечете се с вашите дрехи"
+            }
+        }
+    },
+    commands = {
+        reloadskin = {
+            title = "Презареждане на вашият персонаж",
+            failure = {
+                title = "Грешка",
+                description = "В момента не може да използвате reloadskin"
+            }
+        },
+        clearstuckprops = {
+            title = "Премахване на всички обекти, прикрепени към единицата",
+            failure = {
+                title = "Грешка",
+                description = "В момента не може да използвате clearstuckprops"
+            }
+        },
+        pedmenu = {
+            title = "Отваряне / Даване на Меню за Облекла",
+            failure = {
+                title = "Грешка",
+                description = "Играчът не е на линия"
+            }
+        },
+        joboutfits = {
+            title = "Отваря менюто за екипировка за работа"
+        },
+        gangoutfits = {
+            title = "Отваря менюто Gang Outfits"
+        },
+        bossmanagedoutfits = {
+            title = "Отваря менюто за управление на дрехи на шефа"
+        }
+    },
+    textUI = {
+        clothing = "Магазин за Облекла - Цена: $%d",
+        barber = "Фризьор - Цена: $%d",
+        tattoo = "Магазин за Татуси - Цена: $%d",
+        surgeon = "Хирург - Цена: $%d",
+        clothingRoom = "Облеклена Стая",
+        playerOutfitRoom = "Костюми на Играча"
+    },
+    migrate = {
+        success = {
+            title = "Успех",
+            description = "Миграцията завърши. Мигрирани са %s скина/скинове",
+            descriptionSingle = "Мигриран Скин"
+        },
+        skip = {
+            title = "Информация",
+            description = "Пропуснат скин"
+        },
+        typeError = {
+            title = "Грешка",
+            description = "Невалиден тип"
+        }
+    },
+    purchase = {
+        tattoo = {
+            success = {
+                title = "Успех",
+                description = "Купен е татус %s за %s$"
+            },
+            failure = {
+                title = "Неуспешно нанасяне на татус",
+                description = "Нямате достатъчно пари!"
+            }
+        },
+        store = {
+            success = {
+                title = "Успех",
+                description = "Дадохте $%s на %s!"
+            },
+            failure = {
+                title = "Експлоатация!",
+                description = "Нямате достатъчно пари! Опит за експлоатиране на системата!"
+            }
+        }
+    }
+}

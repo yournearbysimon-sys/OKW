@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,600;1,600&display=swap');
+
+:root {
+  --color-default: #cfd2da;
+  --color-hover: white;
+  --color-primary: #11AAEE;
+}
+
+body {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+  margin: 0;
+  overflow: hidden;
+}
+
+p {
+  margin: 0;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 40;
+}
+
+#eye {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#eyeSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 49px;
+}
+
+#shareIcon {
+  position: absolute;
+  top: 48.6%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+#options-wrapper {
+  margin-left: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: calc(50% + 18pt);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option-container {
+  color: var(--color-default);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Nunito";
+  background: linear-gradient(90deg, rgba(18, 18, 18, 0.8448) 0%, rgba(18, 18, 18, 0.4992) 100%);
+  outline: 1px solid #16161671;
+  box-shadow: 0px 1px 8px 0px #00000033;
+  border-radius: 8px;
+  font-size: 14px;
+  vertical-align: middle;
+  transform-origin: left top;
+  scale: 1;
+  height: 36px;
+  min-width: 156px;
+  max-width: 156px;
+  width: 100%;
+  transition: max-width 0.3s ease-in-out;
+  top: 0;
+  padding-left: 16px;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.option-container:hover {
+  max-width: 250px;
+  overflow: visible;
+  white-space: normal;
+  text-overflow: clip;
+}
+
+.option-container:hover .option-icon {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.option-icon {
+  font-size: clamp(12px, 1.2vw, 14px);
+  color: var(--color-primary);
+  transition: color .3s ease-in-out;
+}
+
+.option-label {
+  color: #fff;
+  font-weight: 600;
+  font-family: "Roboto";
+  font-size: clamp(12px, 1.2vw, 14px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  flex-shrink: 1;
+  min-width: 0;
+}

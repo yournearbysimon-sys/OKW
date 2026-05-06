@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop sayı değil: %s (%s)",
+    "model_invalid":  "model cdimage içinde yok/geçersiz: raw=%s hash=%s",
+    "model_not_object":  "model bir nesne değil (ped/araç): raw=%s hash=%s",
+    "invalid_slot":  "Geçersiz slot",
+    "no_prop_mapped":  "\"%s\" için prop eşlemesi yok",
+    "invalid_prop":  "Geçersiz prop: %s",
+    "place_controls":  "[LMB] Onayla\n[ESC] İptal",
+    "drop_label":  "At",
+    "drop_items_rebuilt":  "[inv-props] Drop prop haritası yeniden oluşturuldu (%d kayıt)"
+}
+

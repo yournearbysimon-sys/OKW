@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop bukan angka: %s (%s)",
+    "model_invalid":  "model tidak ada di cdimage/tidak valid: raw=%s hash=%s",
+    "model_not_object":  "model bukan objek (ped/kendaraan): raw=%s hash=%s",
+    "invalid_slot":  "Slot tidak valid",
+    "no_prop_mapped":  "Tidak ada prop yang dipetakan untuk \"%s\"",
+    "invalid_prop":  "Prop tidak valid: %s",
+    "place_controls":  "[LMB] Konfirmasi\n[ESC] Batal",
+    "drop_label":  "Jatuhkan",
+    "drop_items_rebuilt":  "[inv-props] Peta prop drop dibangun ulang (%d entri)"
+}
+

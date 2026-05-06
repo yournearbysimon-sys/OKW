@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop er ikke et tal: %s (%s)",
+    "model_invalid":  "model findes ikke i cdimage/er ugyldig: raw=%s hash=%s",
+    "model_not_object":  "model er ikke et objekt (ped/køretøj): raw=%s hash=%s",
+    "invalid_slot":  "Ugyldigt slot",
+    "no_prop_mapped":  "Ingen prop knyttet til \"%s\"",
+    "invalid_prop":  "Ugyldig prop: %s",
+    "place_controls":  "[LMB] Bekræft\n[ESC] Annuller",
+    "drop_label":  "Smid",
+    "drop_items_rebuilt":  "[inv-props] Drop-prop-oversigt genopbygget (%d poster)"
+}
+

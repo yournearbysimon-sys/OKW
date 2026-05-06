@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop not number: %s (%s)",
+    "model_invalid":  "model not in cdimage/invalid: raw=%s hash=%s",
+    "model_not_object":  "model is not an object (is ped/veh): raw=%s hash=%s",
+    "invalid_slot":  "Invalid slot",
+    "no_prop_mapped":  "No prop mapped for \"%s\"",
+    "invalid_prop":  "Invalid prop: %s",
+    "place_controls":  "[LMB] Confirm\n[ESC] Cancel",
+    "drop_label":  "Drop",
+    "drop_items_rebuilt":  "[inv-props] Rebuilt dropItems map (%d entries)"
+}
+

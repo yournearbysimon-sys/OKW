@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop nie jest liczbą: %s (%s)",
+    "model_invalid":  "model nie istnieje w cdimage/jest nieprawidłowy: raw=%s hash=%s",
+    "model_not_object":  "model nie jest obiektem (ped/pojazd): raw=%s hash=%s",
+    "invalid_slot":  "Nieprawidłowy slot",
+    "no_prop_mapped":  "Brak przypisanego obiektu dla \"%s\"",
+    "invalid_prop":  "Nieprawidłowy prop: %s",
+    "place_controls":  "[LMB] Potwierdź\n[ESC] Anuluj",
+    "drop_label":  "Upuść",
+    "drop_items_rebuilt":  "[inv-props] Odbudowano mapę modeli dropów (%d wpisów)"
+}
+

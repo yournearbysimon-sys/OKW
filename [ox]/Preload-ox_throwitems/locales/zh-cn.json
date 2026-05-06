@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop 不是数字: %s (%s)",
+    "model_invalid":  "模型不在 cdimage 中或无效: raw=%s hash=%s",
+    "model_not_object":  "模型不是对象（ped/车辆）: raw=%s hash=%s",
+    "invalid_slot":  "无效的槽位",
+    "no_prop_mapped":  "\"%s\" 没有映射的 prop",
+    "invalid_prop":  "无效的 prop: %s",
+    "place_controls":  "[LMB] 确认\n[ESC] 取消",
+    "drop_label":  "丢掉",
+    "drop_items_rebuilt":  "[inv-props] 已重建掉落 prop 映射（%d 条）"
+}
+

@@ -1,0 +1,1 @@
+import{j as r}from"./motion-vendor-ChQ8ph6e.js";import{F as i}from"./bars-2L1yRhrv.js";const m=({label:e,icon:s})=>r.jsxs("div",{className:"customization-menu-header",style:{marginBottom:"1rem",lineHeight:"80%"},children:[s||r.jsx(i,{}),r.jsx("span",{children:e})]});export{m as D};

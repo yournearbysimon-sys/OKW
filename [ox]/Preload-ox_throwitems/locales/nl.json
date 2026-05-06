@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop is geen nummer: %s (%s)",
+    "model_invalid":  "model niet in cdimage/ongeldig: raw=%s hash=%s",
+    "model_not_object":  "model is geen object (ped/voertuig): raw=%s hash=%s",
+    "invalid_slot":  "Ongeldige slot",
+    "no_prop_mapped":  "Geen prop gekoppeld aan \"%s\"",
+    "invalid_prop":  "Ongeldige prop: %s",
+    "place_controls":  "[LMB] Bevestigen\n[ESC] Annuleren",
+    "drop_label":  "Laat vallen",
+    "drop_items_rebuilt":  "[inv-props] DropItems-overzicht opnieuw opgebouwd (%d items)"
+}
+

@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop n\u0027est pas un nombre : %s (%s)",
+    "model_invalid":  "modèle absent de cdimage/invalide : brut=%s hash=%s",
+    "model_not_object":  "le modèle n\u0027est pas un objet (ped/véhicule) : brut=%s hash=%s",
+    "invalid_slot":  "Emplacement invalide",
+    "no_prop_mapped":  "Aucun prop associé à \"%s\"",
+    "invalid_prop":  "Prop invalide : %s",
+    "place_controls":  "[LMB] Confirmer\n[ESC] Annuler",
+    "drop_label":  "Jeter",
+    "drop_items_rebuilt":  "[inv-props] Table des props de drop reconstruite (%d entrées)"
+}
+

@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "το prop δεν είναι αριθμός: %s (%s)",
+    "model_invalid":  "το μοντέλο δεν υπάρχει στο cdimage/είναι άκυρο: raw=%s hash=%s",
+    "model_not_object":  "το μοντέλο δεν είναι αντικείμενο (ped/όχημα): raw=%s hash=%s",
+    "invalid_slot":  "Μη έγκυρο slot",
+    "no_prop_mapped":  "Δεν υπάρχει αντιστοιχισμένο prop για \"%s\"",
+    "invalid_prop":  "Μη έγκυρο prop: %s",
+    "place_controls":  "[LMB] Επιβεβαίωση\n[ESC] Ακύρωση",
+    "drop_label":  "Ρίξε",
+    "drop_items_rebuilt":  "[inv-props] Ο χάρτης των drop props αναδημιουργήθηκε (%d εγγραφές)"
+}
+

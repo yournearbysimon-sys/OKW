@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop 不是數字: %s (%s)",
+    "model_invalid":  "模型不在 cdimage 中或無效: raw=%s hash=%s",
+    "model_not_object":  "模型不是物件（ped/車輛）: raw=%s hash=%s",
+    "invalid_slot":  "無效的欄位",
+    "no_prop_mapped":  "\"%s\" 沒有對應的 prop",
+    "invalid_prop":  "無效的 prop: %s",
+    "place_controls":  "[LMB] 確認\n[ESC] 取消",
+    "drop_label":  "丟下",
+    "drop_items_rebuilt":  "[inv-props] 已重建掉落 prop 對應表（%d 筆）"
+}
+

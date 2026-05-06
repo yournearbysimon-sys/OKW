@@ -1,0 +1,26 @@
+fx_version 'cerulean'
+game 'gta5'
+
+author 'G&N_s Studio'
+description 'Sandy Shores - Strip Mall'
+version '4.2.0'
+
+this_is_a_map 'yes'
+
+dependencies {
+    '/gameBuild:2189',
+    'cfx_gn_collection',
+    'cfx_gn_sandy_mapdata'
+}
+
+data_file 'TIMECYCLEMOD_FILE' 'gn_bettercall_timecycle.xml'
+
+files {
+    'gn_bettercall_timecycle.xml'
+}
+
+escrow_ignore {
+    'stream/**/*.ytd'
+}
+
+dependency '/assetpacks'

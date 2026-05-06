@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop non è un numero: %s (%s)",
+    "model_invalid":  "modello non presente in cdimage/non valido: raw=%s hash=%s",
+    "model_not_object":  "il modello non è un oggetto (ped/veicolo): raw=%s hash=%s",
+    "invalid_slot":  "Slot non valido",
+    "no_prop_mapped":  "Nessun prop associato a \"%s\"",
+    "invalid_prop":  "Prop non valido: %s",
+    "place_controls":  "[LMB] Conferma\n[ESC] Annulla",
+    "drop_label":  "Butta",
+    "drop_items_rebuilt":  "[inv-props] Mappa dei prop a terra ricostruita (%d voci)"
+}
+

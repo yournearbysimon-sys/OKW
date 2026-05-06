@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop nėra skaičius: %s (%s)",
+    "model_invalid":  "modelio nėra cdimage / jis netinkamas: raw=%s hash=%s",
+    "model_not_object":  "modelis nėra objektas (ped/transporto priemonė): raw=%s hash=%s",
+    "invalid_slot":  "Netinkamas slotas",
+    "no_prop_mapped":  "Elementui \"%s\" nepriskirtas prop",
+    "invalid_prop":  "Netinkamas prop: %s",
+    "place_controls":  "[LMB] Patvirtinti\n[ESC] Atšaukti",
+    "drop_label":  "Išmesti",
+    "drop_items_rebuilt":  "[inv-props] Drop propų žemėlapis perstatytas (%d įrašų)"
+}
+

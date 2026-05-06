@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop이 숫자가 아닙니다: %s (%s)",
+    "model_invalid":  "모델이 cdimage에 없거나 유효하지 않습니다: raw=%s hash=%s",
+    "model_not_object":  "모델이 오브젝트가 아닙니다 (ped/차량): raw=%s hash=%s",
+    "invalid_slot":  "유효하지 않은 슬롯",
+    "no_prop_mapped":  "\"%s\"에 매핑된 prop이 없습니다",
+    "invalid_prop":  "유효하지 않은 prop: %s",
+    "place_controls":  "[LMB] 확인\n[ESC] 취소",
+    "drop_label":  "떨구기",
+    "drop_items_rebuilt":  "[inv-props] 드롭 prop 맵을 다시 구성했습니다 (%d개 항목)"
+}
+

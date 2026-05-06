@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop nije broj: %s (%s)",
+    "model_invalid":  "model nije u cdimage / nije validan: raw=%s hash=%s",
+    "model_not_object":  "model nije objekat (ped/vozilo): raw=%s hash=%s",
+    "invalid_slot":  "Nevažeći slot",
+    "no_prop_mapped":  "Nema mapiranog propa za \"%s\"",
+    "invalid_prop":  "Nevažeći prop: %s",
+    "place_controls":  "[LMB] Potvrdi\n[ESC] Откажи",
+    "drop_label":  "Baci",
+    "drop_items_rebuilt":  "[inv-props] Mapa drop propova je ponovo izgrađena (%d unosa)"
+}
+

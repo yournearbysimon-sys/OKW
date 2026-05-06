@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop nu este un număr: %s (%s)",
+    "model_invalid":  "modelul nu există în cdimage/este invalid: raw=%s hash=%s",
+    "model_not_object":  "modelul nu este un obiect (ped/vehicul): raw=%s hash=%s",
+    "invalid_slot":  "Slot invalid",
+    "no_prop_mapped":  "Niciun prop mapat pentru \"%s\"",
+    "invalid_prop":  "Prop invalid: %s",
+    "place_controls":  "[LMB] Confirmare\n[ESC] Anulare",
+    "drop_label":  "Aruncă",
+    "drop_items_rebuilt":  "[inv-props] Harta propurilor de drop a fost reconstruită (%d intrări)"
+}
+

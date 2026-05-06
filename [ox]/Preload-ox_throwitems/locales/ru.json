@@ -1,0 +1,12 @@
+{
+    "prop_not_number":  "prop не является числом: %s (%s)",
+    "model_invalid":  "модель отсутствует в cdimage/недействительна: raw=%s hash=%s",
+    "model_not_object":  "модель не является объектом (ped/транспорт): raw=%s hash=%s",
+    "invalid_slot":  "Недопустимый слот",
+    "no_prop_mapped":  "Для \"%s\" не назначен prop",
+    "invalid_prop":  "Недопустимый prop: %s",
+    "place_controls":  "[LMB] Подтвердить\n[ESC] Отмена",
+    "drop_label":  "Выкинуть",
+    "drop_items_rebuilt":  "[inv-props] Карта моделей дропа пересобрана (%d записей)"
+}
+
