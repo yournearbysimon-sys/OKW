@@ -1,24 +1,29 @@
 --[[
-  While a non-unarmed weapon is selected (drawn):
-  - Ragdoll disabled (stumble / impact).
-  - While aiming: combat roll is hard-blocked — all control groups + killing roll anims if they start.
+  Weapon drawn = no ragdoll, no combat roll / dodge.
+  Combat roll is Jump (22). We block it for the whole time a gun is out — not only ADS — so space spam cannot roll.
 ]]
 
 local UNARMED = `WEAPON_UNARMED`
 
---- https://docs.fivem.net/docs/game-references/controls/
 local INPUT_JUMP = 22
-local INPUT_AIM = 25
 
---- Known strafe combat-roll clips (Jump while ADS). Killed if spam bypasses DisableControlAction.
+--- Strafe roll + common variants; stripped every tick while armed.
 local ROLL_ANIMS = {
-    { "move_strafe@roll",      "roll_fwd" },
-    { "move_strafe@roll",      "roll_bwd" },
-    { "move_strafe@roll_fps", "roll_fwd" },
-    { "move_strafe@roll_fps", "roll_bwd" },
+    { "move_strafe@roll",         "roll_fwd" },
+    { "move_strafe@roll",         "roll_bwd" },
+    { "move_strafe@roll",         "roll_short" },
+    { "move_strafe@roll",         "roll_long" },
+    { "move_strafe@roll_fps",    "roll_fwd" },
+    { "move_strafe@roll_fps",    "roll_bwd" },
+    { "move_strafe@roll_fps",    "roll_short" },
+    { "move_strafe@roll_fps",    "roll_long" },
+    { "move_strafe@roll_stealth", "roll_fwd" },
+    { "move_strafe@roll_stealth", "roll_bwd" },
 }
 
---- SET_PED_CAN_RAGDOLL_FROM_PLAYER_IMPACT
+local COMBAT_MOVEMENT_OFFENSIVE = 2
+local COMBAT_MOVEMENT_STATIONARY = 0
+
 local function setCanRagdollFromPlayerImpact(ped, toggle)
     local fn = SetPedCanRagdollFromPlayerImpact
     if fn then
@@ -36,23 +41,6 @@ local function isWeaponDrawn(ped)
     return weapon ~= 0 and weapon ~= UNARMED
 end
 
---- Free aim, held ADS, or soft-aim — IsPlayerFreeAiming alone misses some camera/bind setups.
----@return boolean
-local function isPlayerAiming()
-    local pid = PlayerId()
-    if IsPlayerFreeAiming(pid) then
-        return true
-    end
-    if IsPlayerTargettingAnything(pid) then
-        return true
-    end
-    -- Right mouse / LT — use "IsPressed" so we still see input even if another script disabled it.
-    if IsControlPressed(0, INPUT_AIM) or IsDisabledControlPressed(0, INPUT_AIM) then
-        return true
-    end
-    return false
-end
-
 ---@param ped number
 local function stopAnyCombatRollAnim(ped)
     for i = 1, #ROLL_ANIMS do
@@ -60,20 +48,16 @@ local function stopAnyCombatRollAnim(ped)
         local clip = ROLL_ANIMS[i][2]
         if IsEntityPlayingAnim(ped, dict, clip, 3) then
             StopAnimTask(ped, dict, clip, 8.0)
-            -- Roll often sits on secondary slot; strip it without nuking weapon task.
             ClearPedSecondaryTask(ped)
-            break
+            return
         end
     end
 end
 
---- Jump blocked on every input group; spam can't route around group 0 only.
----@param enabled boolean false = fully block jump input
-local function setJumpBlockedAllGroups(enabled)
-    if enabled then
-        for group = 0, 2 do
-            DisableControlAction(group, INPUT_JUMP, true)
-        end
+--- Block jump on every gameplay group every frame (spam cannot bypass a single group).
+local function blockJumpEverywhere()
+    for group = 0, 2 do
+        DisableControlAction(group, INPUT_JUMP, true)
     end
 end
 
@@ -85,23 +69,33 @@ CreateThread(function()
         if ped ~= 0 and not IsEntityDead(ped) then
             if isWeaponDrawn(ped) then
                 sleep = 0
+
+                -- Ragdoll
                 SetPedCanRagdoll(ped, false)
                 setCanRagdollFromPlayerImpact(ped, false)
                 if IsPedRagdoll(ped) then
                     ResetPedRagdollTimer(ped)
                 end
 
-                if isPlayerAiming() then
-                    setJumpBlockedAllGroups(true)
-                    stopAnyCombatRollAnim(ped)
-                    -- Extra nuke: if jump is still being eaten into movement, cut secondary motion.
-                    if IsPedJumping(ped) then
-                        ClearPedSecondaryTask(ped)
-                    end
+                -- No jump at all with weapon out = no combat roll / dodge from space.
+                blockJumpEverywhere()
+
+                -- Locks strafe dodge behaviour while still allowing shooting / movement tasks.
+                SetPedCombatMovement(ped, COMBAT_MOVEMENT_STATIONARY)
+
+                -- Strip roll clip if it already started (bypass / timing windows).
+                stopAnyCombatRollAnim(ped)
+
+                -- Space spam: secondary motion stack often holds the roll — clear it.
+                if IsControlPressed(0, INPUT_JUMP)
+                    or IsDisabledControlPressed(0, INPUT_JUMP)
+                    or IsPedJumping(ped) then
+                    ClearPedSecondaryTask(ped)
                 end
             else
                 SetPedCanRagdoll(ped, true)
                 setCanRagdollFromPlayerImpact(ped, true)
+                SetPedCombatMovement(ped, COMBAT_MOVEMENT_OFFENSIVE)
             end
         end
 
