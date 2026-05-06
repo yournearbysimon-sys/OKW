@@ -95,6 +95,9 @@ Config.HealthEcg = {
 
     useStaminaForStrip = true,
     staminaMax = 40.0,
+    --- true = treat native as fatigue (invert so full stamina shows green). false = raw remaining (high native = full).
+
+    staminaInvertPercent = true,
 
     FaintEnabled = true,
     faintStaminaThresholdPct = 4.0,
