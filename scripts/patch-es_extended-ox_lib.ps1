@@ -1,9 +1,11 @@
 # Patches es_extended fxmanifest.lua so global `lib` (ox_lib) exists on the client.
 #
-# Usage:
-#   .\patch-es_extended-ox_lib.ps1 -EsExtendedRoot "C:\FXServer\...\resources\[core]\es_extended"
-#   .\patch-es_extended-ox_lib.ps1 -FxManifestPath "C:\...\es_extended\fxmanifest.lua"
-
+# Windows (local):
+#   .\patch-es_extended-ox_lib.ps1 -EsExtendedRoot "D:\...\resources\[core]\es_extended"
+#
+# Linux VPS (FXServer on the server): use Python instead:
+#   python3 patch-es_extended-ox_lib.py --es-extended-root '/home/.../resources/[core]/es_extended'
+#   # or: chmod +x patch-es_extended-ox_lib.sh && ./patch-es_extended-ox_lib.sh --fxmanifest /path/to/fxmanifest.lua
 param(
     [string] $EsExtendedRoot = "",
     [string] $FxManifestPath = "",
