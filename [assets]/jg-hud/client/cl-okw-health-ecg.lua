@@ -26,7 +26,7 @@ CreateThread(function()
         data = {
             enabled = ecg.Enabled ~= false,
             offsetLeft = ecg.offsetLeft or "0.55vw",
-            offsetBottom = ecg.offsetBottom or "20.8vh",
+            offsetBottom = ecg.offsetBottom or "10.5vh",
             stripWidth = ecg.stripWidth or "clamp(268px, 34vw, 440px)",
         },
     })

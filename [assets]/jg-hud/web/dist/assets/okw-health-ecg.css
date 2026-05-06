@@ -1,11 +1,13 @@
 /* OKW — cardiac strip (scoped only; do not set pointer-events on body/html). */
 :root {
   --ecg-left: 0.55vw;
-  --ecg-bottom: 20.8vh;
+  /* Lower value = closer to bottom of screen (sits under the round status icons). */
+  --ecg-bottom: 10.5vh;
   --ecg-width: clamp(268px, 34vw, 440px);
-  --frame-bg: rgba(15, 18, 28, 0.72);
-  --frame-border: rgba(255, 255, 255, 0.12);
-  --grid: rgba(255, 255, 255, 0.06);
+  /* Mostly transparent — avoids the solid black slab in-game. */
+  --frame-bg: rgba(12, 14, 22, 0.22);
+  --frame-border: rgba(255, 255, 255, 0.18);
+  --grid: rgba(255, 255, 255, 0.08);
   --line-healthy: #4ade80;
   --line-warn: #fbbf24;
   --line-critical: #f87171;
@@ -26,10 +28,9 @@
   border-radius: 10px;
   border: 1px solid var(--frame-border);
   background: var(--frame-bg);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  /* No backdrop-filter here — CEF often shows it as a heavy black/grey block over the world. */
+  box-shadow: none;
   padding: 8px 10px 6px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 }
 
 .okw-ecg-canvas-wrap {
@@ -39,7 +40,7 @@
   border-radius: 6px;
   background: linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 12px 100%,
               linear-gradient(0deg, var(--grid) 1px, transparent 1px) 0 0 / 100% 11px;
-  background-color: rgba(0, 0, 0, 0.18);
+  background-color: transparent;
   overflow: hidden;
 }
 
@@ -60,6 +61,7 @@
   text-transform: uppercase;
   color: var(--text-dim);
   font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.85), 0 1px 2px rgba(0, 0, 0, 0.9);
 }
 
 .okw-ecg-footer strong {
