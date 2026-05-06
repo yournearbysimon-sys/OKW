@@ -1,0 +1,74 @@
+/* OKW — cardiac strip (scoped only; do not set pointer-events on body/html). */
+:root {
+  --ecg-left: 0.55vw;
+  --ecg-bottom: 20.8vh;
+  --ecg-width: clamp(268px, 34vw, 440px);
+  --frame-bg: rgba(15, 18, 28, 0.72);
+  --frame-border: rgba(255, 255, 255, 0.12);
+  --grid: rgba(255, 255, 255, 0.06);
+  --line-healthy: #4ade80;
+  --line-warn: #fbbf24;
+  --line-critical: #f87171;
+  --text-dim: rgba(228, 231, 239, 0.55);
+  --text-bright: #e5e7eb;
+}
+
+.okw-ecg-root {
+  position: fixed;
+  left: var(--ecg-left);
+  bottom: var(--ecg-bottom);
+  width: var(--ecg-width);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.okw-ecg-frame {
+  border-radius: 10px;
+  border: 1px solid var(--frame-border);
+  background: var(--frame-bg);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  padding: 8px 10px 6px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.okw-ecg-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 44px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 12px 100%,
+              linear-gradient(0deg, var(--grid) 1px, transparent 1px) 0 0 / 100% 11px;
+  background-color: rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+#okw-ecg-canvas {
+  display: block;
+  width: 100%;
+  height: 44px;
+}
+
+.okw-ecg-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+  padding: 0 2px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.okw-ecg-footer strong {
+  color: var(--text-bright);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+
+.okw-ecg-label-small {
+  font-size: 9px;
+  opacity: 0.85;
+}

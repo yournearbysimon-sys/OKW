@@ -75,3 +75,12 @@ Config.AllowUsersToEditLayout = true
 Config.UpdateRadarZoom = true -- Enable this if radar is flicking/disappearing
 Config.DevDeleteAllUserSettingsOnStart = true -- Delete player existing KVP when they log in?
 Config.Debug = false
+
+-- OKW: cardiac / BPM strip under status icons (HTML+assets in web/dist; toggles here)
+Config.HealthEcg = {
+    Enabled = true,
+    offsetLeft = "0.55vw",
+    offsetBottom = "20.8vh",
+    stripWidth = "clamp(268px, 34vw, 440px)",
+    updateIntervalMs = 100,
+}
