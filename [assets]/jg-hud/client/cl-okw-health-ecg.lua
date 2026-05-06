@@ -213,7 +213,7 @@ if type(layoutCmd) == "string" and layoutCmd ~= "" and layoutCmd ~= "false" then
         if not ok or not encoded then
             return
         end
-        SetResourceKvpString(kvpDedicated, encoded)
+        SetResourceKvp(kvpDedicated, encoded)
         OkwHealthEcg_ApplyLayoutNow()
         lib.notify({ title = "ECG strip", description = "Position saved.", type = "success" })
     end, false)
