@@ -13,13 +13,30 @@ param(
 $ErrorActionPreference = "Stop"
 
 if ($FxManifestPath -eq "" -and $EsExtendedRoot -ne "") {
-    $FxManifestPath = Join-Path $EsExtendedRoot.TrimEnd('\', '/') "fxmanifest.lua"
+    $root = $EsExtendedRoot.TrimEnd('\', '/')
+    if (-not (Test-Path -LiteralPath $root)) {
+        Write-Host "[error] Folder not found: $root"
+        Write-Host "Replace the path with your real es_extended folder (not C:\path\to\...)."
+        exit 1
+    }
+    $FxManifestPath = Join-Path $root "fxmanifest.lua"
 }
 
-if ($FxManifestPath -eq "" -or -not (Test-Path -LiteralPath $FxManifestPath)) {
+if ($FxManifestPath -eq "") {
     Write-Host "Usage:"
     Write-Host '  .\patch-es_extended-ox_lib.ps1 -EsExtendedRoot "D:\FXServer\resources\[core]\es_extended"'
-    Write-Host '  .\patch-es_extended-ox_lib.ps1 -FxManifestPath "D:\path\to\es_extended\fxmanifest.lua"'
+    Write-Host '  .\patch-es_extended-ox_lib.ps1 -FxManifestPath "D:\FXServer\resources\[core]\es_extended\fxmanifest.lua"'
+    Write-Host ""
+    Write-Host "Tip: paths must exist on this PC. Folder name [core] is fine; keep quoting as in the examples above."
+    exit 1
+}
+
+if (-not (Test-Path -LiteralPath $FxManifestPath)) {
+    Write-Host "[error] File not found: $FxManifestPath"
+    if ($EsExtendedRoot -ne "" -and $FxManifestPath -like "*fxmanifest.lua") {
+        Write-Host "Checked es_extended root: $($EsExtendedRoot.TrimEnd('\','/'))"
+    }
+    Write-Host "Use your real FXServer resources path, e.g. ...\resources\[core]\es_extended\fxmanifest.lua"
     exit 1
 }
 
