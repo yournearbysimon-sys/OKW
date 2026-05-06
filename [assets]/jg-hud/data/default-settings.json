@@ -429,12 +429,12 @@
         "height": 196.3636363636364
       },
       "offset": {
-        "left": 0,
+        "left": 1.59997940063477,
         "bottom": 88.07545055042613,
         "y": 735.5609130859375,
         "offsetY": -15.25004386901855,
-        "offsetX": 0,
-        "x": 0
+        "offsetX": 1.59997940063477,
+        "x": 1.59997940063477
       }
     },
     "progressOutlineHealth_oxygen": {
@@ -586,12 +586,12 @@
       },
       "hidden": true,
       "offset": {
-        "left": 270,
+        "left": 290,
         "bottom": 230,
         "y": 740,
         "offsetY": -230,
-        "offsetX": 150,
-        "x": 270
+        "offsetX": 170,
+        "x": 290
       }
     },
     "minimalSpeedo_engine": {
@@ -642,12 +642,12 @@
         "height": 20
       },
       "offset": {
-        "left": 270,
+        "left": 290,
         "bottom": 94.4390869140625,
         "y": 905.5609130859376,
         "offsetY": 144.74995613098145,
-        "offsetX": 260,
-        "x": 270
+        "offsetX": 280,
+        "x": 290
       }
     },
     "circularMinimap": {
@@ -671,12 +671,12 @@
       },
       "hidden": true,
       "offset": {
-        "left": 270,
+        "left": 290,
         "bottom": 180,
         "y": 790,
         "offsetY": -180,
-        "offsetX": 90,
-        "x": 270
+        "offsetX": 110,
+        "x": 290
       }
     },
     "modernSpeedo_speedo": {
@@ -742,12 +742,12 @@
         "height": 50
       },
       "offset": {
-        "left": 273.19995498657229,
+        "left": 293.19995498657229,
         "bottom": 120,
         "y": 850,
         "offsetY": 850,
-        "offsetX": -1460.0000038146973,
-        "x": 273.19995498657229
+        "offsetX": -1440.0000038146973,
+        "x": 293.19995498657229
       }
     },
     "server-logo": {
